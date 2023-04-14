@@ -1,6 +1,7 @@
 package ru.lomakosv.tests;
 
 import com.codeborne.selenide.Condition;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import ru.lomakosv.TestBase;
 import ru.lomakosv.page.components.AuthSignInComponent;
@@ -8,7 +9,7 @@ import ru.lomakosv.page.components.AuthSignInComponent;
 import static com.codeborne.selenide.Selenide.$;
 
 
-
+@Tag("remote")
 public class AuthTest extends TestBase {
 
     AuthSignInComponent authSignInComponent = new AuthSignInComponent();

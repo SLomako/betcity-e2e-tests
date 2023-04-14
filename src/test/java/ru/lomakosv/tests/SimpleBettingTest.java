@@ -1,12 +1,14 @@
 package ru.lomakosv.tests;
 
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import ru.lomakosv.TestBase;
 import ru.lomakosv.page.SimpleBettingPage;
 import ru.lomakosv.page.components.AuthSignInComponent;
 import ru.lomakosv.page.components.CartFooterComponent;
 
+@Tag("remote")
 public class SimpleBettingTest extends TestBase {
 
     SimpleBettingPage simpleBettingPage = new SimpleBettingPage();
