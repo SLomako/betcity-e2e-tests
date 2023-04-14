@@ -26,8 +26,8 @@ public class ExpressBettingPage {
         return this;
     }
 
-    public ExpressBettingPage depositTheAmount(String ammount) {
-        AMOUNTINPUT.setValue(ammount);
+    public ExpressBettingPage depositTheAmount(String amount) {
+        AMOUNTINPUT.setValue(amount);
         return this;
     }
 

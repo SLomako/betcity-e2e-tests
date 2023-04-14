@@ -20,11 +20,12 @@ public class SystemBettingPage {
     public SystemBettingPage chooseBetThreeEvent() {
         $$("[class='line-event__main-bets'] :nth-child(1)").get(0).click();
         $$("[class='line-event__main-bets'] :nth-child(1)").get(1).click();
+        $$("[class='line-event__main-bets'] :nth-child(1)").get(2).click();
         return this;
     }
 
     public SystemBettingPage chooseSystemBetting() {
-        $("[id=cartTabExpress]").click();
+        $("[id=cartTabSystem]").click();
         return this;
     }
 

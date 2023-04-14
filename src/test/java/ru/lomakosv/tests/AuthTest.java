@@ -8,6 +8,7 @@ import ru.lomakosv.page.components.AuthSignInComponent;
 import static com.codeborne.selenide.Selenide.$;
 
 
+
 public class AuthTest extends TestBase {
 
     AuthSignInComponent authSignInComponent = new AuthSignInComponent();

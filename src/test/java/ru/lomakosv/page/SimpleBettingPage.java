@@ -21,12 +21,12 @@ public class SimpleBettingPage {
     }
 
     public SimpleBettingPage chooseSimpleBetting() {
-        $("[id=cartTabExpress]").click();
+        $("[id=cartTabSingle]").click();
         return this;
     }
 
-    public SimpleBettingPage depositTheAmount(String ammount) {
-        AMOUNTINPUT.setValue(ammount);
+    public SimpleBettingPage depositTheAmount(String amount) {
+        AMOUNTINPUT.setValue(amount);
         return this;
     }
 
