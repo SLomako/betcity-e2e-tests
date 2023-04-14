@@ -29,11 +29,9 @@
 <a id="cases"></a>
 ## :ballot_box_with_check: Реализованные проверки
 
-- :small_blue_diamond: Параметризованный тест смены языка на русский, финский, немецкий 
-- :small_blue_diamond: Переход на главную страницу магазина Steam по нажатию на лого
-- :small_blue_diamond: Открытие страницы 'Обсуждений' из выпадающего меню вкладки Сообщества 
-- :small_blue_diamond: Проверка отображения секций на верхней и боковой разделах страницы магазина
-- :small_blue_diamond: Добавление игры в корзину
+- :small_blue_diamond: Параметризованный тест смены языка на русский, английский
+- :small_blue_diamond: Авторизация через номер телефрна и номер счета
+- :small_blue_diamond: Проверка заключение пари при недостаточном балансе
 
 <a id="console"></a>
 ## :computer: Запуск тестов из терминала
@@ -46,7 +44,7 @@ gradle clean test
 ### Удаленный запуск тестов
 
 ```
-gradle clean test 
+gradle clean remote_test 
 "-Dbrowser=${BROWSER}" 
 "-DbrowserVersion=${BROWSER_VERSION}" 
 "-DbrowserSize=${BROWSER_SIZE}" 
