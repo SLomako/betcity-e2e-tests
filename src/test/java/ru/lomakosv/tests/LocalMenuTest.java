@@ -1,6 +1,7 @@
 package ru.lomakosv.tests;
 
 import com.codeborne.selenide.CollectionCondition;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -16,6 +17,7 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
+@DisplayName("Тест меню в разных locale")
 @Tag("remote")
 public class LocalMenuTest extends TestBase {
 
@@ -25,7 +27,8 @@ public class LocalMenuTest extends TestBase {
                 Arguments.of(Locale.en, List.of("BETTING LIST", "LIVE", "LIVE-CALENDAR", "LIVE-RESULTS", "RESULTS", "STATISTICS", "INFORMATION", "PROMO"))
         );
     }
-    @ParameterizedTest
+
+    @ParameterizedTest(name = "В первом результате выдачи для {0} должен отображаться текст {1}")
     @MethodSource
     void testMenuDependingOnTheLocal(Locale locale, List<String> expectedButtons) {
 
