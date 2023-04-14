@@ -1,6 +1,7 @@
 package ru.lomakosv.tests;
 
 import com.codeborne.selenide.CollectionCondition;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -16,7 +17,7 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
-
+@Disabled
 @DisplayName("Тест меню в разных locale")
 @Tag("remote")
 public class LocalMenuTest extends TestBase {

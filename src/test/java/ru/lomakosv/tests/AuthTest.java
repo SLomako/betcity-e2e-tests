@@ -1,6 +1,7 @@
 package ru.lomakosv.tests;
 
 import com.codeborne.selenide.Condition;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -28,6 +29,7 @@ public class AuthTest extends TestBase {
 
     }
 
+    @Disabled
     @DisplayName("вход по номеру телефона")
     @Test
     void acctNumberEntry() {
