@@ -2,16 +2,14 @@ package ru.lomakosv.tests;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.EnumSource;
 import ru.lomakosv.Betting;
 import ru.lomakosv.TestBase;
 import ru.lomakosv.page.BettingPage;
 import ru.lomakosv.page.components.AuthSignInComponent;
 import ru.lomakosv.page.components.CartFooterComponent;
 import ru.lomakosv.page.components.PopularsHeaderComponent;
-
-import static com.codeborne.selenide.Selenide.$;
-
 
 @DisplayName("Тест одиночного пари")
 @Tag("remote")
@@ -23,17 +21,18 @@ public class BettingTest extends TestBase {
     BettingPage bettingPage = new BettingPage();
 
 
+    @EnumSource(Betting.class)
     @DisplayName("собите")
-    @Test
-    void testSimpleBetting() {
+    @ParameterizedTest
+    void testSimpleBetting(Betting bettingOption) {
 
         authSignInComponent.accountNumberEntry();
 
         popularsHeaderComponent.openPopularsChamps();
 
-        bettingPage.selectBettingOption(Betting.SIMPLE);
+        bettingPage.selectBettingOption(bettingOption.name());
 
-        cartFooterComponent.selectSimpleBetting()
+        cartFooterComponent
                 .depositTheAmount("1000")
                 .confirmBet()
                 .verifyMessage("Пари не оформлено. Недостаточно средств на счете");

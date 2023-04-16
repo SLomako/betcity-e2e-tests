@@ -12,16 +12,25 @@ public class CartFooterComponent {
             CLEAR_BUTTON = $("[id=cartTopClearButton]"),
             SIMPLE_BET_BUTTON = $("[id=cartTabSingle]"),
             AMOUNT_INPUT = $("[class='input'] :nth-child(1)"),
-            CONFIRM_BUTTON = $("[id='cartButtonCheckout']");
+            CONFIRM_BUTTON = $("[id='cartButtonCheckout']"),
+            EXPRESS_BET_BUTTON = $("[id=cartTabExpress]"),
+            SYSTEM_BET_BUTTON = $("[id=cartTabSystem]");
 
     public void verifyMessage(String verifyStr) {
         MESSAGE.shouldHave(Condition.text(verifyStr));
         CLEAR_BUTTON.click();
     }
 
-    public CartFooterComponent selectSimpleBetting() {
+    public void selectSimpleBetting() {
         SIMPLE_BET_BUTTON.click();
-        return this;
+    }
+
+    public void selectExpressBetting() {
+        EXPRESS_BET_BUTTON.click();
+    }
+
+    public void selectSystemBetting() {
+        SYSTEM_BET_BUTTON.click();
     }
 
     public CartFooterComponent depositTheAmount(String amount) {
