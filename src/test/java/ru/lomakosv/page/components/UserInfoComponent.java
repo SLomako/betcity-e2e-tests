@@ -4,6 +4,7 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Selenide.$;
+import static io.qameta.allure.Allure.step;
 
 public class UserInfoComponent {
 
@@ -12,6 +13,8 @@ public class UserInfoComponent {
 
 
     public void verifyLogin() {
-        VERIFICATION_NAME_LOGIN.shouldHave(Condition.text("15821548"));
+        step("Проверка номера счета", () -> {
+            VERIFICATION_NAME_LOGIN.shouldHave(Condition.text("15821548"));
+        });
     }
 }

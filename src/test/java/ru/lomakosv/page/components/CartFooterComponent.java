@@ -4,6 +4,7 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Selenide.$;
+import static io.qameta.allure.Allure.step;
 
 public class CartFooterComponent {
 
@@ -17,29 +18,42 @@ public class CartFooterComponent {
             SYSTEM_BET_BUTTON = $("[id=cartTabSystem]");
 
     public void verifyMessage(String verifyStr) {
-        MESSAGE.shouldHave(Condition.text(verifyStr));
-        CLEAR_BUTTON.click();
+        step("Проверка сообщения", () -> {
+            MESSAGE.shouldHave(Condition.text(verifyStr));
+            CLEAR_BUTTON.click();
+        });
     }
 
     public void selectSimpleBetting() {
-        SIMPLE_BET_BUTTON.click();
+        step("Выбираем 'Одиночную' ставку", () -> {
+            SIMPLE_BET_BUTTON.click();
+        });
     }
 
     public void selectExpressBetting() {
-        EXPRESS_BET_BUTTON.click();
+        step("Выбираем 'Экспресс' ставку", () -> {
+            EXPRESS_BET_BUTTON.click();
+        });
     }
 
     public void selectSystemBetting() {
-        SYSTEM_BET_BUTTON.click();
+        step("Выбираем 'Система' ставок", () -> {
+            SYSTEM_BET_BUTTON.click();
+        });
     }
 
     public CartFooterComponent depositTheAmount(String amount) {
-        AMOUNT_INPUT.setValue(amount);
+        step("Вносим сумму ставки", () -> {
+            AMOUNT_INPUT.setValue(amount);
+        });
         return this;
     }
 
+
     public CartFooterComponent confirmBet() {
-        CONFIRM_BUTTON.click();
+        step("Нажимаем кнопку 'Заключить Пари'", () -> {
+            CONFIRM_BUTTON.click();
+        });
         return this;
     }
 }
