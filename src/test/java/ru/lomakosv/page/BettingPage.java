@@ -21,13 +21,13 @@ public class BettingPage {
         else if (Betting.SYSTEM.name().equals(bettingOption)) {
             SELECT_COUNT_BETTING.get(0).click();
             SELECT_COUNT_BETTING.get(1).click();
+            SELECT_COUNT_BETTING.get(2).click();
             cartFooterComponent.selectSystemBetting();
         }
 
         else if (Betting.EXPRESS.name().equals(bettingOption)) {
             SELECT_COUNT_BETTING.get(0).click();
             SELECT_COUNT_BETTING.get(1).click();
-            SELECT_COUNT_BETTING.get(2).click();
             cartFooterComponent.selectExpressBetting();
         }
         else System.out.println("нет такого варианта ставки");
