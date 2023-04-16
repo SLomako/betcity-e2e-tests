@@ -1,35 +1,35 @@
 package ru.lomakosv.tests;
 
-import com.codeborne.selenide.Condition;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import ru.lomakosv.TestBase;
 import ru.lomakosv.page.components.AuthSignInComponent;
+import ru.lomakosv.page.components.UserInfoComponent;
 
-import static com.codeborne.selenide.Selenide.$;
 import static io.qameta.allure.Allure.step;
-
+@Disabled
 @DisplayName("Тест авторизации")
 @Tag("remote")
 public class AuthTest extends TestBase {
 
     AuthSignInComponent authSignInComponent = new AuthSignInComponent();
+    UserInfoComponent userInfoComponent = new UserInfoComponent();
 
     @DisplayName("вход по номеру счет")
     @Test
     void testPhoneEntry() {
         step("Вводим номер номер счета и пароль", () -> {
-            authSignInComponent.phoneEntry();
+            authSignInComponent.accountNumberEntry();
         });
         step("Проверяем что авторизация успешна", () -> {
-            $("[class='user-info__item-step-value']").shouldHave(Condition.text("15821548"));
+            userInfoComponent.verifyLogin();
         });
 
     }
 
-    @Disabled
+
     @DisplayName("вход по номеру телефона")
     @Test
     void acctNumberEntry() {
@@ -38,7 +38,7 @@ public class AuthTest extends TestBase {
             authSignInComponent.phoneEntry();
         });
         step("Проверяем что авторизация успешна", () -> {
-            $("[class='user-info__item-step-value']").shouldHave(Condition.text("15821548"));
+            userInfoComponent.verifyLogin();
         });
 
 
