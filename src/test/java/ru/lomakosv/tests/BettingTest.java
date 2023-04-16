@@ -11,7 +11,7 @@ import ru.lomakosv.page.components.AuthSignInComponent;
 import ru.lomakosv.page.components.CartFooterComponent;
 import ru.lomakosv.page.components.PopularsHeaderComponent;
 
-@DisplayName("Тест одиночного пари")
+@DisplayName("Тест пари")
 @Tag("remote")
 public class BettingTest extends TestBase {
 
@@ -22,8 +22,7 @@ public class BettingTest extends TestBase {
 
 
     @EnumSource(Betting.class)
-    @DisplayName("собите")
-    @ParameterizedTest
+    @ParameterizedTest (name = "для {0}")
     void testSimpleBetting(Betting bettingOption) {
 
         authSignInComponent.accountNumberEntry();
