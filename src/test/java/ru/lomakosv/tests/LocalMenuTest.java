@@ -17,7 +17,7 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
-@Disabled
+
 @DisplayName("Тест меню в разных locale")
 @Tag("remote")
 public class LocalMenuTest extends TestBase {

@@ -32,7 +32,6 @@ public class BettingTest extends TestBase {
         popularsHeaderComponent.openPopularsChamps();
 
         bettingPage.selectBettingOption(Betting.SIMPLE);
-        $("[id=cartTabSingle]").click();
 
         cartFooterComponent.selectSimpleBetting()
                 .depositTheAmount("1000")

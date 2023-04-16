@@ -9,7 +9,7 @@ import ru.lomakosv.page.components.AuthSignInComponent;
 import ru.lomakosv.page.components.UserInfoComponent;
 
 import static io.qameta.allure.Allure.step;
-@Disabled
+
 @DisplayName("Тест авторизации")
 @Tag("remote")
 public class AuthTest extends TestBase {
