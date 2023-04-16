@@ -23,7 +23,7 @@ public class BettingTest extends TestBase {
 
     @EnumSource(Betting.class)
     @ParameterizedTest (name = "для {0}")
-    void testSimpleBetting(Betting bettingOption) {
+    void testBetting(Betting bettingOption) {
 
         authSignInComponent.accountNumberEntry();
 
