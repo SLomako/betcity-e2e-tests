@@ -20,7 +20,7 @@ public class BettingTest extends TestBase {
     PopularsHeaderComponent popularsHeaderComponent = new PopularsHeaderComponent();
     BettingPage bettingPage = new BettingPage();
 
-
+    @DisplayName("Тест")
     @EnumSource(Betting.class)
     @ParameterizedTest (name = "для {0}")
     void testBetting(Betting bettingOption) {
