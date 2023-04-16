@@ -23,18 +23,18 @@ public class BettingPage {
             });
         }
         if (Betting.SYSTEM.name().equals(bettingOption)) {
-            step("Выбираем победу перые две команды в списке", () -> {
+            step("Выбираем победу первых трёх команд в списке", () -> {
                 SELECT_COUNT_BETTING.get(0).click();
                 SELECT_COUNT_BETTING.get(1).click();
                 SELECT_COUNT_BETTING.get(2).click();
                 cartFooterComponent.selectSystemBetting();
             });
         } else if (Betting.EXPRESS.name().equals(bettingOption)) {
-            step("Выбираем победу первые три команды в списке", () -> {
+            step("Выбираем победу первых двух команд в списке", () -> {
                 SELECT_COUNT_BETTING.get(0).click();
                 SELECT_COUNT_BETTING.get(1).click();
                 cartFooterComponent.selectExpressBetting();
             });
-        } else System.out.println("нет такого варианта ставки");
+        }
     }
 }
