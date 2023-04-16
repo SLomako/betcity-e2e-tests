@@ -15,27 +15,26 @@ public class BettingPage {
 
 
     public void selectBettingOption(String bettingOption) {
-        step("Выбираем победу первой команды в списке", () -> {
-            if (Betting.SIMPLE.name().equals(bettingOption)) {
+
+        if (Betting.SIMPLE.name().equals(bettingOption)) {
+            step("Выбираем победу первой команды в списке", () -> {
                 SELECT_COUNT_BETTING.get(0).click();
                 cartFooterComponent.selectSimpleBetting();
-            }
-        });
-
+            });
+        }
         if (Betting.SYSTEM.name().equals(bettingOption)) {
             step("Выбираем победу перые две команды в списке", () -> {
-            SELECT_COUNT_BETTING.get(0).click();
-            SELECT_COUNT_BETTING.get(1).click();
-            SELECT_COUNT_BETTING.get(2).click();
-            cartFooterComponent.selectSystemBetting(); });
-        }
-
-        else if (Betting.EXPRESS.name().equals(bettingOption)) {
+                SELECT_COUNT_BETTING.get(0).click();
+                SELECT_COUNT_BETTING.get(1).click();
+                SELECT_COUNT_BETTING.get(2).click();
+                cartFooterComponent.selectSystemBetting();
+            });
+        } else if (Betting.EXPRESS.name().equals(bettingOption)) {
             step("Выбираем победу первые три команды в списке", () -> {
-            SELECT_COUNT_BETTING.get(0).click();
-            SELECT_COUNT_BETTING.get(1).click();
-            cartFooterComponent.selectExpressBetting();});
-        }
-        else System.out.println("нет такого варианта ставки");
+                SELECT_COUNT_BETTING.get(0).click();
+                SELECT_COUNT_BETTING.get(1).click();
+                cartFooterComponent.selectExpressBetting();
+            });
+        } else System.out.println("нет такого варианта ставки");
     }
 }
