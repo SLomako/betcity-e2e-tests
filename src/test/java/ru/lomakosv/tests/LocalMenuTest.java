@@ -31,7 +31,8 @@ public class LocalMenuTest extends TestBase {
         );
     }
 
-    @ParameterizedTest(name = "В первом результате выдачи для {0} должен отображаться текст {1}")
+    @DisplayName("В первом результате выдачи для {0} должен отображаться текст {1}")
+    @ParameterizedTest
     @MethodSource
     void testMenuDependingOnTheLocal(Locale locale, List<String> expectedButtons) {
 
