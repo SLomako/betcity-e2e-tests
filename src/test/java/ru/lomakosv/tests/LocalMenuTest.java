@@ -6,8 +6,9 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
-import ru.lomakosv.Locale;
+import ru.lomakosv.enums.Locale;
 import ru.lomakosv.TestBase;
+import ru.lomakosv.utils.Critical;
 
 import java.util.List;
 import java.util.stream.Stream;
@@ -16,8 +17,10 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
+import static io.qameta.allure.Allure.step;
 
-@DisplayName("Тест меню в разных locale")
+@Critical
+@DisplayName("Тест наименований меню в разных locale")
 @Tag("remote")
 public class LocalMenuTest extends TestBase {
 
@@ -32,8 +35,17 @@ public class LocalMenuTest extends TestBase {
     @MethodSource
     void testMenuDependingOnTheLocal(Locale locale, List<String> expectedButtons) {
 
-        $("[class='custom-select menu-lang']").click();
-        $$("[class='custom-select-popup-item__text']").find(text(locale.name())).click();
-        $$("[class='menu'] a").filter(visible).shouldHave(CollectionCondition.texts(expectedButtons));
+        step("Нажимаем на значек смену языка", () -> {
+            $("[class='custom-select menu-lang']").click();
+        });
+
+        step("Выбираем язык для сайта", () -> {
+            $$("[class='custom-select-popup-item__text']").find(text(locale.name())).click();
+        });
+
+        step("Проверка изменения наименований меню согласно выбраному языку", () -> {
+            $$("[class='menu'] a").filter(visible).shouldHave(CollectionCondition.texts(expectedButtons));
+        });
+
     }
 }

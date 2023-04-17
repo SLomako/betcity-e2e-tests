@@ -1,7 +1,7 @@
 package ru.lomakosv.page;
 
 import com.codeborne.selenide.ElementsCollection;
-import ru.lomakosv.Betting;
+import ru.lomakosv.enums.Betting;
 import ru.lomakosv.page.components.CartFooterComponent;
 
 import static com.codeborne.selenide.Selenide.$$;

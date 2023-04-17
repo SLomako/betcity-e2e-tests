@@ -4,14 +4,17 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
-import ru.lomakosv.Betting;
+import ru.lomakosv.enums.Betting;
 import ru.lomakosv.TestBase;
 import ru.lomakosv.page.BettingPage;
 import ru.lomakosv.page.components.AuthSignInComponent;
 import ru.lomakosv.page.components.CartFooterComponent;
 import ru.lomakosv.page.components.PopularsHeaderComponent;
+import ru.lomakosv.utils.Critical;
 
-@DisplayName("Тест пари")
+
+@Critical
+@DisplayName("Тест на заключение пари при неодостаточном балансе на счету")
 @Tag("remote")
 public class BettingTest extends TestBase {
 

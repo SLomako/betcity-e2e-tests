@@ -1,16 +1,17 @@
 package ru.lomakosv.tests;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import ru.lomakosv.TestBase;
 import ru.lomakosv.page.components.AuthSignInComponent;
 import ru.lomakosv.page.components.UserInfoComponent;
+import ru.lomakosv.utils.Blocker;
 
 import static io.qameta.allure.Allure.step;
 
-@DisplayName("Тест авторизации")
+@Blocker
+@DisplayName("Тест авторизации через главное меню сайта")
 @Tag("remote")
 public class AuthTest extends TestBase {
 
