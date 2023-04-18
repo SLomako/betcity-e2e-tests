@@ -10,6 +10,10 @@ repositories {
     mavenCentral()
 }
 
+compileTestJava{
+    options.encoding = 'UTF-8'
+}
+
 allure {
     report {
         version.set("2.21.0")
@@ -27,10 +31,10 @@ allure {
 dependencies {
     testImplementation (
             "com.codeborne:selenide:6.13.0",
-            "io.qameta.allure:allure-selenide:2.21.0",
             "org.junit.jupiter:junit-jupiter:5.9.2",
             "org.slf4j:slf4j-simple:2.0.7",
             "io.qameta.allure:allure-selenide:2.21.0",
+            "org.aeonbits.owner:owner:1.0.12"
     )
 }
 
@@ -49,5 +53,19 @@ test {
 task remote_test(type: Test) {
     useJUnitPlatform {
         includeTags("remote")
+    }
+}
+
+task test1(type: Test) {
+    useJUnitPlatform {
+        includeTags("1")
+    }
+    systemProperties(System.getProperties())
+    testLogging {
+
+        lifecycle {
+            events "started", "skipped", "failed", "standard_error", "standard_out"
+            exceptionFormat "short"
+        }
     }
 }

@@ -18,9 +18,11 @@ public class AuthTest extends TestBase {
     AuthSignInComponent authSignInComponent = new AuthSignInComponent();
     UserInfoComponent userInfoComponent = new UserInfoComponent();
 
+    @Tag("1")
     @DisplayName("вход по номеру счет")
     @Test
     void testPhoneEntry() {
+
         step("Вводим номер номер счета и пароль", () -> {
             authSignInComponent.accountNumberEntry();
         });
@@ -29,7 +31,6 @@ public class AuthTest extends TestBase {
         });
 
     }
-
 
     @DisplayName("вход по номеру телефона")
     @Test
@@ -41,9 +42,5 @@ public class AuthTest extends TestBase {
         step("Проверяем что авторизация успешна", () -> {
             userInfoComponent.verifyLogin();
         });
-
-
     }
-
-
 }
