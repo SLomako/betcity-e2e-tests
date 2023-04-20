@@ -7,7 +7,7 @@ import org.junit.jupiter.params.provider.EnumSource;
 import ru.lomakosv.enums.Betting;
 import ru.lomakosv.TestBase;
 import ru.lomakosv.page.BettingPage;
-import ru.lomakosv.page.components.AuthSignInComponent;
+import ru.lomakosv.page.AuthSignInPage;
 import ru.lomakosv.page.components.CartFooterComponent;
 import ru.lomakosv.page.components.PopularsHeaderComponent;
 import ru.lomakosv.utils.Critical;
@@ -19,7 +19,7 @@ import ru.lomakosv.utils.Critical;
 public class BettingTest extends TestBase {
 
     CartFooterComponent cartFooterComponent = new CartFooterComponent();
-    AuthSignInComponent authSignInComponent = new AuthSignInComponent();
+    AuthSignInPage authSignInComponent = new AuthSignInPage();
     PopularsHeaderComponent popularsHeaderComponent = new PopularsHeaderComponent();
     BettingPage bettingPage = new BettingPage();
 

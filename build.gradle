@@ -61,6 +61,21 @@ task test1(type: Test) {
         includeTags("1")
     }
     systemProperties(System.getProperties())
+
+    testLogging {
+
+        lifecycle {
+            events "started", "skipped", "failed", "standard_error", "standard_out"
+            exceptionFormat "short"
+        }
+    }
+}
+
+task test2(type: Test) {
+    useJUnitPlatform {
+        includeTags("2")
+    }
+    systemProperties(System.getProperties())
     testLogging {
 
         lifecycle {
