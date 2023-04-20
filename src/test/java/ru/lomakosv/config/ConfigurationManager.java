@@ -12,4 +12,8 @@ public class ConfigurationManager {
     public  static AuthAccountNumberConfig getAuthAccountNumberConfig() {
         return ConfigCache.getOrCreate(AuthAccountNumberConfig.class, System.getProperties());
     }
+
+    public  static AuthAccountPhoneConfig getAuthAccountPhoneConfig() {
+        return ConfigCache.getOrCreate(AuthAccountPhoneConfig.class, System.getProperties());
+    }
 }

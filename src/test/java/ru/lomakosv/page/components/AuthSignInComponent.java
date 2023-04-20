@@ -1,17 +1,20 @@
-package ru.lomakosv.page;
+package ru.lomakosv.page.components;
 
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import ru.lomakosv.config.AuthAccountNumberConfig;
+import ru.lomakosv.config.AuthAccountPhoneConfig;
 import ru.lomakosv.config.ConfigurationManager;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 import static io.qameta.allure.Allure.step;
 
-public class AuthSignInPage {
+public class AuthSignInComponent {
 
     public static AuthAccountNumberConfig authAccountNumberConfig  = ConfigurationManager.getAuthAccountNumberConfig();
+    public static AuthAccountPhoneConfig authAccountPhoneConfig  = ConfigurationManager.getAuthAccountPhoneConfig();
+
 
     static final SelenideElement
             SIGN_IN_BUTTON = $("#authSignIn"),
@@ -35,11 +38,11 @@ public class AuthSignInPage {
         });
 
         step("Вводим номер телефона", () -> {
-            LOGIN_INPUT.setValue("9254970519");
+            LOGIN_INPUT.setValue(authAccountPhoneConfig.accountPhone());
         });
 
         step("Вводим пароль", () -> {
-            PASS_INPUT.setValue("qwerasdfzxcv");
+            PASS_INPUT.setValue(authAccountPhoneConfig.password());
         });
 
         step("Нажимаем войти", () -> {

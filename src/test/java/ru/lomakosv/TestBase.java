@@ -7,6 +7,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import ru.lomakosv.config.ProjectConfiguration;
 import ru.lomakosv.helpers.Attach;
+import ru.lomakosv.page.components.UserInfoComponent;
 
 import static ru.lomakosv.config.ProjectConfiguration.webConfig;
 
@@ -15,6 +16,8 @@ import static com.codeborne.selenide.Selenide.open;
 public class TestBase {
 
     static ProjectConfiguration projectConfiguration = new ProjectConfiguration();
+    UserInfoComponent userInfoComponent = new UserInfoComponent();
+
 
     @BeforeAll
     static void BeforeALl() {
@@ -35,5 +38,7 @@ public class TestBase {
             Attach.browserConsoleLogs();
             Attach.addVideo();
         }
+        userInfoComponent.logOut();
+
     }
 }
