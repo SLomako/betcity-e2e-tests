@@ -4,6 +4,7 @@ import org.aeonbits.owner.Config;
 import ru.lomakosv.enums.Browser;
 
 @Config.Sources({
+        "system.properties",
         "classpath:${env}.properties"}
 )
 public interface WebConfig extends Config {

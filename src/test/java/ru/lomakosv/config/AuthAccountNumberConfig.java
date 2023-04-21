@@ -4,6 +4,7 @@ import org.aeonbits.owner.Config;
 
 
 @Config.Sources({
+        "system.properties",
         "classpath:auth.properties"
 
 })
