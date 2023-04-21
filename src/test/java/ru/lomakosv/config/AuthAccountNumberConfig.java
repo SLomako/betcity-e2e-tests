@@ -4,7 +4,7 @@ import org.aeonbits.owner.Config;
 
 
 @Config.Sources({
-        //"file:/tmp/auth.properties",
+        "file:C:\\Users\\lomak\\auth.properties",
         "classpath:auth.properties"
 
 })

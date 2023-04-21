@@ -6,6 +6,9 @@ import ru.lomakosv.config.AuthAccountNumberConfig;
 import ru.lomakosv.config.AuthAccountPhoneConfig;
 import ru.lomakosv.config.ConfigurationManager;
 
+import java.io.IOException;
+
+
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 import static io.qameta.allure.Allure.step;
@@ -27,7 +30,7 @@ public class AuthSignInComponent {
             AUTH_ACCOUNT_NUMBER = $$(".login__tabs-item");
 
 
-    public void accountPhoneEntry() {
+    public void accountPhoneEntry() throws IOException {
 
         step("Нажимаем кнопку вход на главном меню", () -> {
             SIGN_IN_BUTTON.click();
