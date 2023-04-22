@@ -25,7 +25,7 @@ public class UserInfoComponent {
     public void verifyLogin()  throws IOException  {
             String content = "verify=secret";
             Path propsPath = Paths.get("src/test/resources/verify.properties");
-            Files.write(propsPath, content.getBytes(StandardCharsets.UTF_8));
+            Files.writeString(propsPath, content);
 
         VerifyLogon verifyLogon = ConfigFactory.create(VerifyLogon.class, System.getProperties());
         step("Проверка номера счета", () -> {
