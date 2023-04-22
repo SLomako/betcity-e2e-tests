@@ -23,13 +23,13 @@ public class UserInfoComponent {
             LOG_OUT_BUTTON = $("[class*=icon_logout-light]");
 
     public void verifyLogin()  throws IOException  {
-            String content = "fff=secret";
+            String content = "verify=secret";
             Path propsPath = Paths.get("src/test/resources/verify.properties");
             Files.write(propsPath, content.getBytes(StandardCharsets.UTF_8));
 
-        VerifyLogon virfyLogon = ConfigFactory.create(VerifyLogon.class, System.getProperties());
+        VerifyLogon verifyLogon = ConfigFactory.create(VerifyLogon.class, System.getProperties());
         step("Проверка номера счета", () -> {
-            VERIFICATION_NAME_LOGIN.shouldHave(Condition.text(virfyLogon.verify()));
+            VERIFICATION_NAME_LOGIN.shouldHave(Condition.text(verifyLogon.verify()));
         });
             Files.delete(propsPath);
     }
