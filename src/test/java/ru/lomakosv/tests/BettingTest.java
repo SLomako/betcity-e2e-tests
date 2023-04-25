@@ -10,6 +10,7 @@ import ru.lomakosv.page.BettingPage;
 import ru.lomakosv.page.components.AuthSignInComponent;
 import ru.lomakosv.page.components.CartFooterComponent;
 import ru.lomakosv.page.components.PopularsHeaderComponent;
+import ru.lomakosv.page.components.UserInfoComponent;
 import ru.lomakosv.utils.Critical;
 
 
@@ -21,6 +22,7 @@ public class BettingTest extends TestBase {
     CartFooterComponent cartFooterComponent = new CartFooterComponent();
     AuthSignInComponent authSignInComponent = new AuthSignInComponent();
     PopularsHeaderComponent popularsHeaderComponent = new PopularsHeaderComponent();
+    UserInfoComponent userInfoComponent = new UserInfoComponent();
     BettingPage bettingPage = new BettingPage();
 
     @DisplayName("Тест")
@@ -38,6 +40,8 @@ public class BettingTest extends TestBase {
                 .depositTheAmount("1000")
                 .confirmBet()
                 .verifyMessage("Пари не оформлено. Недостаточно средств на счете");
+
+        userInfoComponent.logOut();
 
     }
 }

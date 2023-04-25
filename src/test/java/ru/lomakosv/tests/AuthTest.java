@@ -44,5 +44,7 @@ public class AuthTest extends TestBase {
             userInfoComponent.verifyLogin();
         });
 
+        userInfoComponent.logOut();
+
     }
 }
