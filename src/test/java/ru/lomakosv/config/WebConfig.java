@@ -1,7 +1,6 @@
 package ru.lomakosv.config;
 
 import org.aeonbits.owner.Config;
-import ru.lomakosv.enums.Browser;
 
 @Config.Sources({
         "classpath:${env}.properties"}
@@ -10,7 +9,7 @@ public interface WebConfig extends Config {
 
     @Key("browser")
     @DefaultValue("chrome")
-    Browser browser();
+    String browser();
 
     @Key("browserVersion")
     String browserVersion();

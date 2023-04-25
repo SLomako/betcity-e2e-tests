@@ -8,9 +8,6 @@ import ru.lomakosv.page.components.AuthSignInComponent;
 import ru.lomakosv.page.components.UserInfoComponent;
 import ru.lomakosv.utils.Blocker;
 
-import java.io.IOException;
-
-
 import static io.qameta.allure.Allure.step;
 
 @Blocker
@@ -24,7 +21,7 @@ public class AuthTest extends TestBase {
     @Tag("1")
     @DisplayName("вход по номеру телефона")
     @Test
-    void testAccountPhoneEntry() throws IOException {
+    void testAccountPhoneEntry() {
 
         step("Вводим номер телефона и пароль", () -> {
             authSignInComponent.accountPhoneEntry();
