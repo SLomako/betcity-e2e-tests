@@ -3,6 +3,7 @@ package ru.lomakosv.tests;
 import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.api.Test;
 import ru.lomakosv.TestBase;
 import ru.lomakosv.page.components.AuthSignInComponent;
@@ -11,16 +12,16 @@ import ru.lomakosv.utils.Blocker;
 
 import static io.qameta.allure.Allure.step;
 
+
 @Owner("SLomako")
 @Blocker
 @DisplayName("Тест авторизации через главное меню сайта")
-@Tag("remote")
 public class AuthTest extends TestBase {
 
     AuthSignInComponent authSignInComponent = new AuthSignInComponent();
     UserInfoComponent userInfoComponent = new UserInfoComponent();
 
-    @Tag("1")
+    @Tags({@Tag("web"), @Tag("blocker"), @Tag("auth")})
     @DisplayName("вход по номеру телефона")
     @Test
     void testAccountPhoneEntry() {
@@ -36,7 +37,7 @@ public class AuthTest extends TestBase {
 
     }
 
-    @Tag("2")
+    @Tags({@Tag("web"), @Tag("blocker"), @Tag("auth")})
     @DisplayName("вход по номеру счет")
     @Test
     void testAccountNumberEntry() {

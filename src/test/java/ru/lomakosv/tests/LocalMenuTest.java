@@ -4,6 +4,7 @@ import com.codeborne.selenide.CollectionCondition;
 import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -23,7 +24,6 @@ import static io.qameta.allure.Allure.step;
 @Owner("SLomako")
 @Critical
 @DisplayName("Тест наименований меню в разных locale")
-@Tag("remote")
 public class LocalMenuTest extends TestBase {
 
     static Stream<Arguments> testMenuDependingOnTheLocal() {
@@ -36,6 +36,7 @@ public class LocalMenuTest extends TestBase {
     @DisplayName("")
     @ParameterizedTest(name = "В первом результате выдачи для {0} должен отображаться текст {1}")
     @MethodSource
+    @Tags({@Tag("web1"), @Tag("critical")})
     void testMenuDependingOnTheLocal(Locale locale, List<String> expectedButtons) {
 
         step("Нажимаем на значек смену языка", () -> {

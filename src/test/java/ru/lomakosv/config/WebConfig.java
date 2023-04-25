@@ -7,19 +7,16 @@ import org.aeonbits.owner.Config;
 )
 public interface WebConfig extends Config {
 
-    @Key("browser")
-    @DefaultValue("chrome")
-    String browser();
+    @DefaultValue("Chrome, 112.0")
+    @Key("browserWithVersion")
+    String[] getBrowserAndVersion();
 
-    @Key("browserVersion")
-    String browserVersion();
-
-    @Key("browserSize")
     @DefaultValue("1920x1080")
+    @Key("browserSize")
     String browserSize();
 
+    @DefaultValue("https://betcity.ru")
     @Key("baseUrl")
-    @DefaultValue("https://betcity.ru/")
     String baseUrl();
 
     @DefaultValue("false")

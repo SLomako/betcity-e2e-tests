@@ -3,6 +3,7 @@ package ru.lomakosv.tests;
 import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.EnumSource;
 import ru.lomakosv.enums.Betting;
@@ -18,7 +19,7 @@ import ru.lomakosv.utils.Critical;
 @Owner("SLomako")
 @Critical
 @DisplayName("Тест на заключение пари при неодостаточном балансе на счету")
-@Tag("remote")
+
 public class BettingTest extends TestBase {
 
     CartFooterComponent cartFooterComponent = new CartFooterComponent();
@@ -27,6 +28,7 @@ public class BettingTest extends TestBase {
     UserInfoComponent userInfoComponent = new UserInfoComponent();
     BettingPage bettingPage = new BettingPage();
 
+    @Tags({@Tag("web"), @Tag("critical"), @Tag("auth")})
     @DisplayName("Тест")
     @EnumSource(Betting.class)
     @ParameterizedTest (name = "для {0}")

@@ -10,7 +10,7 @@ repositories {
     mavenCentral()
 }
 
-compileTestJava{
+compileTestJava {
     options.encoding = 'UTF-8'
 }
 
@@ -29,12 +29,13 @@ allure {
 }
 
 dependencies {
-    testImplementation (
+    testImplementation(
             "com.codeborne:selenide:6.13.0",
             "org.junit.jupiter:junit-jupiter:5.9.2",
             "org.slf4j:slf4j-simple:2.0.7",
             "io.qameta.allure:allure-selenide:2.21.0",
-            "org.aeonbits.owner:owner:1.0.12"
+            "org.aeonbits.owner:owner:1.0.12",
+            "io.qameta.allure:allure-junit5:2.21.0"
     )
 }
 
@@ -50,17 +51,9 @@ test {
     }
 }
 
-task remote_test(type: Test) {
+task blocker_test(type: Test) {
     useJUnitPlatform {
-        includeTags("remote")
-
-    }
-    systemProperties(System.getProperties())
-}
-
-task test1(type: Test) {
-    useJUnitPlatform {
-        includeTags("1")
+        includeTags("blocker")
     }
     systemProperties(System.getProperties())
 
@@ -73,11 +66,12 @@ task test1(type: Test) {
     }
 }
 
-task test2(type: Test) {
+task critical_test(type: Test) {
     useJUnitPlatform {
-        includeTags("2")
+        includeTags("critical")
     }
     systemProperties(System.getProperties())
+
     testLogging {
 
         lifecycle {
@@ -86,3 +80,20 @@ task test2(type: Test) {
         }
     }
 }
+
+task web_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("web")
+    }
+    systemProperties(System.getProperties())
+
+    testLogging {
+
+        lifecycle {
+            events "started", "skipped", "failed", "standard_error", "standard_out"
+            exceptionFormat "short"
+        }
+    }
+}
+
+

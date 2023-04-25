@@ -12,7 +12,7 @@ public class PopularsHeaderComponent {
 
     public void openPopularsChamps() {
 
-        step("В меню Популяное выбираем ТОП матчи", () -> {
+        step("В меню Популярное выбираем ТОП матчи", () -> {
             SELECT_TOP_MATCH.click();
         });
     }
