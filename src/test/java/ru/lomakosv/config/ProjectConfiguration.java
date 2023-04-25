@@ -11,7 +11,7 @@ public class ProjectConfiguration {
     public static AuthSelenoidConfig authSelenoidConfig = ConfigurationManager.getAuthSelenoidConfig();
 
     public void config() {
-
+        Configuration.baseUrl = webConfig.baseUrl();
         String[] browserWithVersion = webConfig.getBrowserAndVersion();
         Configuration.browser = browserWithVersion[0];
         Configuration.browserVersion = browserWithVersion[1];

@@ -9,6 +9,7 @@ import org.junit.jupiter.api.BeforeEach;
 import ru.lomakosv.config.ProjectConfiguration;
 import ru.lomakosv.helpers.Attach;
 
+import static com.codeborne.selenide.Configuration.baseUrl;
 import static ru.lomakosv.config.ProjectConfiguration.webConfig;
 
 import static com.codeborne.selenide.Selenide.open;
@@ -26,7 +27,7 @@ public class TestBase {
 
     @BeforeEach
     void beforeEach() {
-        open(webConfig.baseUrl());
+        open(baseUrl);
     }
 
     @AfterEach
