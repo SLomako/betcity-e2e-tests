@@ -3,6 +3,7 @@ package ru.lomakosv.config;
 import org.aeonbits.owner.Config;
 
 @Config.Sources({
+        "system:properties",
         "classpath:${env}.properties"}
 )
 public interface WebConfig extends Config {
