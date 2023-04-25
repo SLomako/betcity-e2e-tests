@@ -1,5 +1,6 @@
 package ru.lomakosv.tests;
 
+import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -14,6 +15,7 @@ import ru.lomakosv.page.components.UserInfoComponent;
 import ru.lomakosv.utils.Critical;
 
 
+@Owner("SLomako")
 @Critical
 @DisplayName("Тест на заключение пари при неодостаточном балансе на счету")
 @Tag("remote")

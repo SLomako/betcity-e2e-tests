@@ -1,5 +1,6 @@
 package ru.lomakosv.tests;
 
+import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -10,6 +11,7 @@ import ru.lomakosv.utils.Blocker;
 
 import static io.qameta.allure.Allure.step;
 
+@Owner("SLomako")
 @Blocker
 @DisplayName("Тест авторизации через главное меню сайта")
 @Tag("remote")
@@ -29,6 +31,8 @@ public class AuthTest extends TestBase {
         step("Проверяем что авторизация успешна", () -> {
             userInfoComponent.verifyLogin();
         });
+
+        userInfoComponent.logOut();
 
     }
 
