@@ -36,7 +36,7 @@ public class LocalMenuTest extends TestBase {
     @DisplayName("")
     @ParameterizedTest(name = "В первом результате выдачи для {0} должен отображаться текст {1}")
     @MethodSource
-    @Tags({@Tag("web1"), @Tag("critical")})
+    @Tags({@Tag("web"), @Tag("critical")})
     void testMenuDependingOnTheLocal(Locale locale, List<String> expectedButtons) {
 
         step("Нажимаем на значек смену языка", () -> {
