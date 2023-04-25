@@ -8,7 +8,7 @@ import org.aeonbits.owner.Config;
 )
 public interface WebConfig extends Config {
 
-    @DefaultValue("chrome, 112.0")
+    @DefaultValue("chrome, 110.0")
     @Key("browserWithVersion")
     String[] getBrowserAndVersion();
 
