@@ -35,7 +35,7 @@ dependencies {
             "org.slf4j:slf4j-simple:2.0.7",
             "io.qameta.allure:allure-selenide:2.21.0",
             "org.aeonbits.owner:owner:1.0.12",
-            "io.qameta.allure:allure-junit5:2.21.0"
+            //"io.qameta.allure:allure-junit5:2.21.0"
     )
 }
 
