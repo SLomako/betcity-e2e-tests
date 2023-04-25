@@ -24,7 +24,7 @@ public class ProjectConfiguration {
     }
     public void selenoidVideo() {
         String remoteUrl = webConfig.remoteUrl();
-        Configuration.remote = "https://" + authSelenoidConfig.remote_username() + authSelenoidConfig.remote_password() + "@" + remoteUrl  + "/wd/hub";
+        Configuration.remote = "https://" + authSelenoidConfig.remote_username() + ":" + authSelenoidConfig.remote_password() + "@" + remoteUrl  + "/wd/hub";
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
                 "enableVNC", true,
