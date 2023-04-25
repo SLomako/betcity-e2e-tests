@@ -8,6 +8,7 @@ import java.util.Map;
 public class ProjectConfiguration {
 
     public static WebConfig webConfig = ConfigurationManager.getWebConfig();
+    public static AuthSelenoidConfig authSelenoidConfig = ConfigurationManager.getAuthSelenoidConfig();
 
     public void config() {
 
@@ -19,9 +20,11 @@ public class ProjectConfiguration {
         if (webConfig.isRemote()) {
             selenoidVideo();
         }
+
     }
     public void selenoidVideo() {
-        Configuration.remote = webConfig.remoteUrl();
+        String remoteUrl = webConfig.remoteUrl();
+        Configuration.remote = "https://" + authSelenoidConfig.remote_username() + authSelenoidConfig.remote_password() + "@" + remoteUrl  + "/wd/hub";
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
                 "enableVNC", true,
