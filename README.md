@@ -1,5 +1,5 @@
-# betcity-e2e-tests
-<h1 >Демопроект автоматизации UI на сайте <a href="https://betcity.ru/ "> BetCity</a></h1>
+
+<h1 >Демопроект по автоматизации тестирования сайта <a href="https://betcity.ru/ "> BetCity</a></h1>
 
 ## ☑️ Содержание:
 
