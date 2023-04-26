@@ -53,7 +53,7 @@ test {
 
 task blocker_test(type: Test) {
     useJUnitPlatform {
-        includeTags("blocker")
+        includeTags("blocker1")
     }
     systemProperties(System.getProperties())
 
