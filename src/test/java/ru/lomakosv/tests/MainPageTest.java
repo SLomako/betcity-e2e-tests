@@ -36,7 +36,23 @@ public class MainPageTest extends TestBase {
             String linkTelegramSupportBot = $("[class=right-block-support__item] [href='https://t.me/betcityru_support_bot']").getAttribute("href");
             Assertions.assertEquals(linkTelegramSupportBot, "https://t.me/betcityru_support_bot");
         });
+    }
+
+    @Minor
+    @Disabled
+    @Tags({@Tag("web"), @Tag("minor")})
+    @DisplayName("Проверка номера телефона Технической поддержки ")
+    @Test
+    void testLinkLiveChat() {
+
+        step("Проверяем тел. '8 800 100 74 75'", () -> {
+            String title = $("[class=right-block-support__tel]").innerText();
+            Assertions.assertEquals(title, "8 800 100 74 75");
+        });
+
 
 
     }
 }
+
+
