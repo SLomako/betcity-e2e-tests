@@ -1,5 +1,6 @@
 package ru.lomakosv.tests;
 
+import io.qameta.allure.Allure;
 import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -29,12 +30,13 @@ public class BettingTest extends TestBase {
 
 
     @Tags({@Tag("web"), @Tag("critical"), @Tag("auth")})
-    @DisplayName("")
     @EnumSource(Betting.class)
-    //@Description("{0} привет {1}")
-    @ParameterizedTest(name = "{displayName} для [{argumentsWithNames}]")
+    @ParameterizedTest(name = "Тест для [{argumentsWithNames}]")
     void testBetting(Betting bettingOption) {
 
+        Allure.getLifecycle().updateTestCase(test -> {
+            test.setFullName("allureParameterizedTest2 displayName for " + bettingOption);
+        });
         authSignInComponent.accountNumberEntry();
 
         popularsHeaderComponent.openPopularsChamps();
