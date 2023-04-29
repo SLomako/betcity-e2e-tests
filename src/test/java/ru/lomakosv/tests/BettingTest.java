@@ -32,7 +32,7 @@ public class BettingTest extends TestBase {
     @DisplayName("")
     @EnumSource(Betting.class)
     //@Description("{0} привет {1}")
-    @ParameterizedTest(name = "{displayName} для {Betting.class}")
+    @ParameterizedTest(name = "{displayName} для [{argumentsWithNames}]")
     void testBetting(Betting bettingOption) {
 
         authSignInComponent.accountNumberEntry();
