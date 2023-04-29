@@ -39,12 +39,16 @@ public class LocalMenuTest extends TestBase {
     //@DisplayName("")
     //@ParameterizedTest(name = "В первом результате выдачи для {0} должен отображаться текст {1}")
     @MethodSource
-    @ParameterizedTest(name = "{1}")
-    @DisplayName("В первом результате выдачи для {0} должен отображаться текст {1}")
-    //@Description("allureParameterizedTest description")
+
+    @ParameterizedTest(name = "{displayName} [{argumentsWithNames}]")
+    @DisplayName("allureParameterizedTest2 displayName")
+    @Description("allureParameterizedTest2 description")
     @Tags({@Tag("web"), @Tag("critical")})
     void testMenuDependingOnTheLocal(Locale locale, List<String> expectedButtons) {
-
+        Allure.parameter("testParam", expectedButtons);
+        Allure.getLifecycle().updateTestCase(test -> {
+            test.setFullName("allureParameterizedTest2 displayName for " + expectedButtons);
+        });
         step("Нажимаем на значек смену языка", () -> {
             $("[class='custom-select menu-lang']").click();
         });
