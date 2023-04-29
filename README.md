@@ -25,5 +25,105 @@
 
 - Параметризованный тест смены языка на русский, английский
 - Авторизация через номер телефрна и номер счета
-- Проверка заключение пари при недостаточном балансе
+- Заключение пари при недостаточном балансе для ставок Simple, System, Exspress
+- Cодержания заголовка главной страницы
+- Наличия ссылки на телеграмм бот
+____
+
+## <img alt="Jenkins" height="25" src="images/logo/Jenkins.svg" width="25"/></a><a name="Сборка"></a>Сборка в [Jenkins]</a>
+____
+<p align="center">  
+<a href="https://jenkins.autotests.cloud/job/Kod3ik_qa_guru_x5/"><img src="images/screen/jenkins_dashboard.bmp" alt="Jenkins" width="950"/></a>  
+</p>
+
+
+### **Параметры сборки в Jenkins:**
+
+- *browser (браузер, по умолчанию chrome)*
+- *browserVersion (версия браузера, по умолчанию 100.0)*
+- *browserSize (размер окна браузера, по умолчанию 1920x1080)*
+- *remote (логин, пароль и адрес удаленного сервера Selenoid)*
+
+
+## Команды для запуска из терминала
+___
+***Локальный запуск:***
+```bash  
+gradle clean X5Group_test
+```
+
+***Удалённый запуск через Jenkins:***
+```bash  
+clean X5Group_test
+-Dbrowser="${browser}"
+-DbrowserVersion="${browserVersion}"
+-DbrowserSize="${browserSize}"
+-Dremote="${remote}"
+```
+___
+## <img alt="Allure" height="25" src="images/logo/Allure.svg" width="25"/></a> <a name="Allure"></a>Allure [отчет](https://jenkins.autotests.cloud/job/Kod3ik_qa_guru_x5/8/allure/)</a>
+___
+
+### *Основная страница отчёта*
+
+<p align="center">  
+<img title="Allure Overview Dashboard" src="images/screen/jenkins_overview.png" width="850">  
+</p>  
+
+### *Тест-кейсы*
+
+<p align="center">  
+<img title="Allure Tests" src="images/screen/allure_tests.png" width="850">  
+</p>
+
+### *Графики*
+
+  <p align="center">  
+<img title="Allure Graphics" src="images/screen/allure_graths.bmp" width="850">  
+<img title="Allure Graphics" src="images/screen/graphs.png" width="850">  
+</p>
+
+___
+
+## <img alt="Allure" height="25" src="images/logo/Allure2.svg" width="25"/></a>Интеграция с <a target="_blank" href="https://allure.autotests.cloud/project/2197/dashboards">Allure TestOps</a>
+____
+### *Allure TestOps Dashboard*
+
+<p align="center">  
+<img title="Allure TestOps Dashboard" src="images/screen/allure_overview.png" width="850">  
+</p>  
+
+### *Ручные тест-кейсы*
+
+<p align="center">  
+<img title="Allure Tests" src="images/screen/manual_tests.png" width="850">  
+</p>
+
+### *Авто тест-кейсы*
+
+<p align="center">  
+<img title="Allure TestOps Tests" src="images/screen/lanches.bmp" width="850">  
+</p>
+
+___
+
+## <img alt="Allure" height="25" src="images/logo/Jira.svg" width="25"/></a> Интеграция с <a target="_blank" href="https://jira.autotests.cloud/browse/HOMEWORK-682">Jira</a>
+____
+<p align="center">  
+<img title="Jira" src="images/screen/jira.png" width="">  
+</p>
+
+____
+## <img alt="Allure" height="25" src="images/logo/Telegram.svg" width="25"/></a> Уведомление в Telegram при помощи бота
+____
+<p align="center">  
+<img title="Allure Overview Dashboard" src="images/screen/telegram_bot.png" width="550">  
+</p>
+
+____
+## <img alt="Selenoid" height="25" src="images/logo/Selenoid.svg" width="25"/></a> Примеры видео выполнения тестов на Selenoid
+____
+<p align="center">
+<img title="Selenoid Video" src="images/video/x5.gif" width="550" height="350"  alt="video">   
+</p>
 
