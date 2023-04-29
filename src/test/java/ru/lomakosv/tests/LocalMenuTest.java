@@ -42,7 +42,7 @@ public class LocalMenuTest extends TestBase {
 
     @ParameterizedTest(name = "В первом результате выдачи для {0} должен отображаться текст {1}")
     @DisplayName("")
-    //@Description("allureParameterizedTest2 description")
+    @Description("allureParameterizedTest2 description")
     @Tags({@Tag("web"), @Tag("critical")})
     void testMenuDependingOnTheLocal(Locale locale, List<String> expectedButtons) {
         Allure.parameter("testParam", expectedButtons);
