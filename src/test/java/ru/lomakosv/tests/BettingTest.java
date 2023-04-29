@@ -18,7 +18,7 @@ import ru.lomakosv.utils.Critical;
 
 @Owner("SLomako")
 @Critical
-@DisplayName("Тест на заключение пари при неодостаточном балансе на счету")
+@DisplayName("Тест на заключение пари при недостаточном балансе на счету")
 
 public class BettingTest extends TestBase {
 
