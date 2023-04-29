@@ -33,7 +33,7 @@ public class LocalMenuTest extends TestBase {
         );
     }
 
-    @DisplayName("")
+    @DisplayName("Параметризированный")
     @ParameterizedTest(name = "В первом результате выдачи для {0} должен отображаться текст {1}")
     @MethodSource
     @Tags({@Tag("web"), @Tag("critical")})
