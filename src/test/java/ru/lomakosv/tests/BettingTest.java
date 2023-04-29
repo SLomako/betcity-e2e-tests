@@ -27,11 +27,10 @@ public class BettingTest extends TestBase {
     UserInfoComponent userInfoComponent = new UserInfoComponent();
     BettingPage bettingPage = new BettingPage();
 
-
     @Tags({@Tag("web"), @Tag("critical"), @Tag("auth")})
-    @DisplayName("Параметризированный")
+    @DisplayName("Тест на заключение пари при недостаточном балансе на счету")
     @EnumSource(Betting.class)
-    @ParameterizedTest(name = "Тест на заключение пари при недостаточном балансе на счету")
+    @ParameterizedTest (name = "для {0}")
     void testBetting(Betting bettingOption) {
 
         authSignInComponent.accountNumberEntry();
