@@ -36,11 +36,12 @@ public class LocalMenuTest extends TestBase {
     }
 
 
-    @DisplayName("")
-    @ParameterizedTest(name = "В первом результате выдачи для {0} должен отображаться текст {1}")
+    //@DisplayName("")
+    //@ParameterizedTest(name = "В первом результате выдачи для {0} должен отображаться текст {1}")
     @MethodSource
-    //@DisplayName("allureParameterizedTest displayName")
-    @Description("allureParameterizedTest description")
+    @ParameterizedTest(name = "{1}")
+    @DisplayName("В первом результате выдачи для {0} должен отображаться текст {1}")
+    //@Description("allureParameterizedTest description")
     @Tags({@Tag("web"), @Tag("critical")})
     void testMenuDependingOnTheLocal(Locale locale, List<String> expectedButtons) {
 
