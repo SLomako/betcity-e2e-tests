@@ -45,67 +45,47 @@
 
 ## Команды для запуска из терминала
 ___
-***Локальный запуск:***
+***Удаленный запуск с использованием Jenkins+Selinoid:***
 ```bash  
-gradle clean X5Group_test
+gradle clean test -Denv=remote
 ```
 
-***Удалённый запуск через Jenkins:***
-```bash  
-clean X5Group_test
--Dbrowser="${browser}"
--DbrowserVersion="${browserVersion}"
--DbrowserSize="${browserSize}"
--Dremote="${remote}"
-```
-___
-## <img alt="Allure" height="25" src="images/logo/Allure.svg" width="25"/></a> <a name="Allure"></a>Allure [отчет](https://jenkins.autotests.cloud/job/Kod3ik_qa_guru_x5/8/allure/)</a>
-___
+## <img alt="Allure" height="25" src="images/logo/Allure.svg" width="25"/></a>  <a name="Allure"></a>Allure</a>
+
 
 ### *Основная страница отчёта*
 
 <p align="center">  
-<img title="Allure Overview Dashboard" src="images/screen/jenkins_overview.png" width="850">  
+<img title="Allure Overview Dashboard" src="images/screen/AR1.png" width="850">  
 </p>  
 
 ### *Тест-кейсы*
 
 <p align="center">  
-<img title="Allure Tests" src="images/screen/allure_tests.png" width="850">  
-</p>
-
-### *Графики*
-
-  <p align="center">  
-<img title="Allure Graphics" src="images/screen/allure_graths.bmp" width="850">  
-<img title="Allure Graphics" src="images/screen/graphs.png" width="850">  
+<img title="Allure Tests" src="images/screen/AR2.png" width="850">  
+<img title="Allure Graphics" src="images/screen/AR3.png" width="850">  
 </p>
 
 ___
 
-## <img alt="Allure" height="25" src="images/logo/Allure2.svg" width="25"/></a>Интеграция с <a target="_blank" href="https://allure.autotests.cloud/project/2197/dashboards">Allure TestOps</a>
-____
+## <img alt="Allure" height="25" src="images/logo/Allure2.svg" width="25"/> </a>Интеграция с Allure TestOps</a>
+
+
 ### *Allure TestOps Dashboard*
 
 <p align="center">  
-<img title="Allure TestOps Dashboard" src="images/screen/allure_overview.png" width="850">  
+<img title="Allure TestOps Dashboard" src="images/screen/ATO5.png" width="850">  
 </p>  
 
-### *Ручные тест-кейсы*
+### *Авто и Ручные тест-кейсы*
 
 <p align="center">  
-<img title="Allure Tests" src="images/screen/manual_tests.png" width="850">  
+<img title="Allure Tests" src="images/screenATO3.png" width="850">  
 </p>
 
-### *Авто тест-кейсы*
 
-<p align="center">  
-<img title="Allure TestOps Tests" src="images/screen/lanches.bmp" width="850">  
-</p>
 
-___
-
-## <img alt="Allure" height="25" src="images/logo/Jira.svg" width="25"/></a> Интеграция с <a target="_blank" href="https://jira.autotests.cloud/browse/HOMEWORK-682">Jira</a>
+## <img alt="Allure" height="25" src="images/logo/Jira.svg" width="25"/></a> Интеграция с <a target="_blank" href="https://jira.autotests.cloud/browse/HOMEWORK-689">Jira</a>
 ____
 <p align="center">  
 <img title="Jira" src="images/screen/jira.png" width="">  
