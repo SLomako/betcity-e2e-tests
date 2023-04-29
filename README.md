@@ -63,11 +63,6 @@ gradle clean test -Denv=remote
 
 <p align="center">  
 <img title="Allure Tests" src="images/screen/AR2.png" width="850">  
-</p>
-
-### *Тест-кейсы*
-
-  <p align="center">  
 <img title="Allure Graphics" src="images/screen/AR3.jpg" width="850">  
 </p>
 
