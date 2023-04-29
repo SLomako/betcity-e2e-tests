@@ -68,29 +68,23 @@ gradle clean test -Denv=remote
 
 ___
 
-## <img alt="Allure" height="25" src="images/logo/Allure2.svg" width="25"/></a>Интеграция с <a target="_blank" href="https://allure.autotests.cloud/project/2197/dashboards">Allure TestOps</a>
+## <img alt="Allure" height="25" src="images/logo/Allure2.svg" width="25"/></a>Интеграция с Allure TestOps</a>
 ____
 ### *Allure TestOps Dashboard*
 
 <p align="center">  
-<img title="Allure TestOps Dashboard" src="images/screen/allure_overview.png" width="850">  
+<img title="Allure TestOps Dashboard" src="images/screen/ATO5.png" width="850">  
 </p>  
 
-### *Ручные тест-кейсы*
+### *Авто и Ручные тест-кейсы*
 
 <p align="center">  
-<img title="Allure Tests" src="images/screen/manual_tests.png" width="850">  
+<img title="Allure Tests" src="images/screenATO3.png" width="850">  
 </p>
 
-### *Авто тест-кейсы*
 
-<p align="center">  
-<img title="Allure TestOps Tests" src="images/screen/lanches.bmp" width="850">  
-</p>
 
-___
-
-## <img alt="Allure" height="25" src="images/logo/Jira.svg" width="25"/></a> Интеграция с <a target="_blank" href="https://jira.autotests.cloud/browse/HOMEWORK-682">Jira</a>
+## <img alt="Allure" height="25" src="images/logo/Jira.svg" width="25"/></a> Интеграция с <a target="_blank" href="https://jira.autotests.cloud/browse/HOMEWORK-689">Jira</a>
 ____
 <p align="center">  
 <img title="Jira" src="images/screen/jira.png" width="">  
