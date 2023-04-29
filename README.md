@@ -43,7 +43,7 @@
 - browserSize (размер окна браузера, по умолчанию 1920x1080)
 
 
-## Команда для запуска из терминала
+## ballot_box_with_check: Команда для запуска из терминала
 
 ***Удаленный запуск с использованием Jenkins+Selinoid:***
 ```bash  
@@ -53,13 +53,13 @@ gradle clean test -Denv=remote
 ## <img alt="Allure" height="25" src="images/logo/Allure.svg" width="25"/></a>  <a name="Allure"></a>Allure Report	</a>
 
 
-### Основная страница отчёта
+## Основная страница отчёта
 
 <p align="center">  
 <img title="Allure Overview Dashboard" src="images/screen/AR1.png" width="850">  
 </p>  
 
-### Тест-кейсы
+## Тест-кейсы
 
 <p align="center">  
 <img title="Allure Tests" src="images/screen/AR2.png" width="850">  
@@ -70,13 +70,13 @@ gradle clean test -Denv=remote
 ## <img alt="Allure_TO" height="25" src="images/logo/Allure_TO.svg" width="25"/> </a>Интеграция с Allure TestOps</a>
 
 
-### Allure TestOps Dashboard
+## Allure TestOps Dashboard
 
 <p align="center">  
 <img title="Allure TestOps Dashboard" src="images/screen/ATO5.png" width="850">  
 </p>  
 
-### Авто и Ручные тест-кейсы
+## Авто и Ручные тест-кейсы
 
 <p align="center">  
 <img title="Allure Tests" src="images/screen/ATO3.png" width="850">  
@@ -92,7 +92,7 @@ ____
 ## <img alt="Allure" height="25" src="images/logo/Telegram.svg" width="25"/></a> Уведомление в Telegram при помощи бота
 ____
 <p align="center">  
-<img title="Allure Overview Dashboard" src="images/screen/tg_bot.png" width="550">  
+<img title="Allure Overview Dashboard" src="images/screen/tg.png" width="550">  
 </p>
 
 ____
