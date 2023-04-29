@@ -49,27 +49,26 @@ ___
 ```bash  
 gradle clean test -Denv=remote
 ```
-___
-## <img alt="Allure" height="25" src="images/logo/Allure.svg" width="25"/></a> <a name="Allure"></a>Allure [отчет](https://jenkins.autotests.cloud/job/Kod3ik_qa_guru_x5/8/allure/)</a>
-___
+
+## <img alt="Allure" height="25" src="images/logo/Allure.svg" width="25"/></a> <a name="Allure"></a>Allure [отчет]</a>
+
 
 ### *Основная страница отчёта*
 
 <p align="center">  
-<img title="Allure Overview Dashboard" src="images/screen/jenkins_overview.png" width="850">  
+<img title="Allure Overview Dashboard" src="images/screen/AR1.png" width="850">  
 </p>  
 
 ### *Тест-кейсы*
 
 <p align="center">  
-<img title="Allure Tests" src="images/screen/allure_tests.png" width="850">  
+<img title="Allure Tests" src="images/screen/AR2.png" width="850">  
 </p>
 
-### *Графики*
+### *Тест-кейсы*
 
   <p align="center">  
-<img title="Allure Graphics" src="images/screen/allure_graths.bmp" width="850">  
-<img title="Allure Graphics" src="images/screen/graphs.png" width="850">  
+<img title="Allure Graphics" src="images/screen/AR3.jpg" width="850">  
 </p>
 
 ___
