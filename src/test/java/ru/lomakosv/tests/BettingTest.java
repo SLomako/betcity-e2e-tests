@@ -1,5 +1,6 @@
 package ru.lomakosv.tests;
 
+import io.qameta.allure.Description;
 import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -31,6 +32,7 @@ public class BettingTest extends TestBase {
     @Tags({@Tag("web"), @Tag("critical"), @Tag("auth")})
     @DisplayName("Тест")
     @EnumSource(Betting.class)
+    @Description("{0} привет {1}")
     @ParameterizedTest(name = "для {argumentsWithNames}")
     void testBetting(Betting bettingOption) {
 
