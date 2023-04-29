@@ -4,8 +4,6 @@ import org.aeonbits.owner.Config;
 
 @Config.Sources({
         "classpath:auth.properties"
-
-
 })
 public interface AuthAccountPhoneConfig extends Config {
 
@@ -14,6 +12,4 @@ public interface AuthAccountPhoneConfig extends Config {
 
     @Key("password")
     String password();
-
-
 }

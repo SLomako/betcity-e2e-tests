@@ -13,7 +13,6 @@ import static io.qameta.allure.Allure.step;
 @DisplayName("Тесты на главную страницу")
 public class MainPageTest extends TestBase {
 
-
     @Critical
     @Tags({@Tag("web"), @Tag("critical")})
     @DisplayName("Проверка содержания заголовка главной страницы")
@@ -49,9 +48,6 @@ public class MainPageTest extends TestBase {
             String title = $("[class=right-block-support__tel]").innerText();
             Assertions.assertEquals(title, "8 800 100 74 75");
         });
-
-
-
     }
 }
 

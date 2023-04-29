@@ -1,6 +1,5 @@
 package ru.lomakosv.config;
 
-
 import org.aeonbits.owner.ConfigCache;
 
 public class ConfigurationManager {
@@ -9,15 +8,15 @@ public class ConfigurationManager {
         return ConfigCache.getOrCreate(WebConfig.class, System.getProperties());
     }
 
-    public  static AuthAccountNumberConfig getAuthAccountNumberConfig() {
+    public static AuthAccountNumberConfig getAuthAccountNumberConfig() {
         return ConfigCache.getOrCreate(AuthAccountNumberConfig.class);
     }
 
-    public  static AuthAccountPhoneConfig getAuthAccountPhoneConfig() {
+    public static AuthAccountPhoneConfig getAuthAccountPhoneConfig() {
         return ConfigCache.getOrCreate(AuthAccountPhoneConfig.class);
     }
 
-    public  static AuthSelenoidConfig getAuthSelenoidConfig() {
+    public static AuthSelenoidConfig getAuthSelenoidConfig() {
         return ConfigCache.getOrCreate(AuthSelenoidConfig.class);
     }
 }

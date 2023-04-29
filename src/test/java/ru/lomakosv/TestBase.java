@@ -11,13 +11,11 @@ import ru.lomakosv.helpers.Attach;
 import static com.codeborne.selenide.Configuration.baseUrl;
 import static io.qameta.allure.Allure.step;
 import static ru.lomakosv.config.ProjectConfiguration.webConfig;
-
 import static com.codeborne.selenide.Selenide.open;
 
 public class TestBase {
 
     static ProjectConfiguration projectConfiguration = new ProjectConfiguration();
-
 
     @BeforeAll
     static void BeforeALl() {
@@ -28,7 +26,7 @@ public class TestBase {
     @BeforeEach
     void beforeEach() {
         step("Открываем главную страницу", () -> {
-        open(baseUrl);
+            open(baseUrl);
         });
     }
 

@@ -15,7 +15,6 @@ import ru.lomakosv.page.components.PopularsHeaderComponent;
 import ru.lomakosv.page.components.UserInfoComponent;
 import ru.lomakosv.utils.Critical;
 
-
 @Owner("SLomako")
 @Critical
 @DisplayName("Тест на заключение пари при неодостаточном балансе на счету")
@@ -31,7 +30,7 @@ public class BettingTest extends TestBase {
     @Tags({@Tag("web"), @Tag("critical"), @Tag("auth")})
     @DisplayName("Тест")
     @EnumSource(Betting.class)
-    @ParameterizedTest (name = "для {0}")
+    @ParameterizedTest(name = "для {0}")
     void testBetting(Betting bettingOption) {
 
         authSignInComponent.accountNumberEntry();
@@ -46,7 +45,6 @@ public class BettingTest extends TestBase {
                 .verifyMessage("Пари не оформлено. Недостаточно средств на счете");
 
         userInfoComponent.logOut();
-
     }
 }
 

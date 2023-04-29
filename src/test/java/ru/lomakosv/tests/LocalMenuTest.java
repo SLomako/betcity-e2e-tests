@@ -53,6 +53,5 @@ public class LocalMenuTest extends TestBase {
         });
 
         Selenide.closeWebDriver();
-
     }
 }

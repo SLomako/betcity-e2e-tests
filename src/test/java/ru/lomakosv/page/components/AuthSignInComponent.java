@@ -15,9 +15,8 @@ import static io.qameta.allure.Allure.step;
 
 public class AuthSignInComponent {
 
-    public static AuthAccountNumberConfig authAccountNumberConfig  = ConfigurationManager.getAuthAccountNumberConfig();
-    public static AuthAccountPhoneConfig authAccountPhoneConfig  = ConfigurationManager.getAuthAccountPhoneConfig();
-
+    public static AuthAccountNumberConfig authAccountNumberConfig = ConfigurationManager.getAuthAccountNumberConfig();
+    public static AuthAccountPhoneConfig authAccountPhoneConfig = ConfigurationManager.getAuthAccountPhoneConfig();
 
     static final SelenideElement
             SIGN_IN_BUTTON = $("#authSignIn"),
@@ -29,8 +28,7 @@ public class AuthSignInComponent {
             AUTH_PHONE_BUTTON = $$(".login__tabs-item"),
             AUTH_ACCOUNT_NUMBER = $$(".login__tabs-item");
 
-
-    public void accountPhoneEntry() throws IOException {
+    public void accountPhoneEntry() {
 
         step("Нажимаем кнопку вход на главном меню", () -> {
             SIGN_IN_BUTTON.click();
@@ -55,7 +53,6 @@ public class AuthSignInComponent {
 
     public void accountNumberEntry() {
 
-
         step("Нажимаем кнопку вход на главном меню", () -> {
             SIGN_IN_BUTTON.click();
         });
@@ -76,5 +73,4 @@ public class AuthSignInComponent {
             LOGIN_SIGN_IN_BUTTON.click();
         });
     }
-
 }

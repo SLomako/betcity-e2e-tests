@@ -12,7 +12,6 @@ import ru.lomakosv.utils.Blocker;
 
 import static io.qameta.allure.Allure.step;
 
-
 @Owner("SLomako")
 @Blocker
 @DisplayName("Тест авторизации через главное меню сайта")
@@ -34,7 +33,6 @@ public class AuthTest extends TestBase {
         });
 
         userInfoComponent.logOut();
-
     }
 
     @Tags({@Tag("web"), @Tag("blocker"), @Tag("auth")})
@@ -50,6 +48,5 @@ public class AuthTest extends TestBase {
         });
 
         userInfoComponent.logOut();
-
     }
 }

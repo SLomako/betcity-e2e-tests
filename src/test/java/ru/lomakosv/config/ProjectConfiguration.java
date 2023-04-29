@@ -20,8 +20,8 @@ public class ProjectConfiguration {
         if (webConfig.isRemote()) {
             selenoidVideo();
         }
-
     }
+
     public void selenoidVideo() {
         String remoteUrl = webConfig.remoteUrl();
         Configuration.remote = "https://" + authSelenoidConfig.remote_username() + ":" + authSelenoidConfig.remote_password() + "@" + remoteUrl  + "/wd/hub";
@@ -32,5 +32,4 @@ public class ProjectConfiguration {
         ));
         Configuration.browserCapabilities = capabilities;
     }
-
 }
