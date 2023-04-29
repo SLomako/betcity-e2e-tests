@@ -45,18 +45,9 @@
 
 ## Команды для запуска из терминала
 ___
-***Локальный запуск:***
+***Удаленный запуск с использованием Jenkins+Selinoid:***
 ```bash  
-gradle clean X5Group_test
-```
-
-***Удалённый запуск через Jenkins:***
-```bash  
-clean X5Group_test
--Dbrowser="${browser}"
--DbrowserVersion="${browserVersion}"
--DbrowserSize="${browserSize}"
--Dremote="${remote}"
+gradle clean test -Denv=remote
 ```
 ___
 ## <img alt="Allure" height="25" src="images/logo/Allure.svg" width="25"/></a> <a name="Allure"></a>Allure [отчет](https://jenkins.autotests.cloud/job/Kod3ik_qa_guru_x5/8/allure/)</a>
