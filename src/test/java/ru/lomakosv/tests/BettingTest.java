@@ -30,11 +30,9 @@ public class BettingTest extends TestBase {
 
 
     @Tags({@Tag("web"), @Tag("critical"), @Tag("auth")})
-    //@DisplayName("Тест")
+    @DisplayName("Тест")
     @EnumSource(Betting.class)
     @ParameterizedTest(name = "{displayName} [{argumentsWithNames}]")
-    @DisplayName("allureParameterizedTest2 displayName")
-    @Description("allureParameterizedTest2 description")
     void testBetting(Betting bettingOption) {
 
         authSignInComponent.accountNumberEntry();
