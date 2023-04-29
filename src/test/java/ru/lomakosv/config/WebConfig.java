@@ -3,8 +3,8 @@ package ru.lomakosv.config;
 import org.aeonbits.owner.Config;
 
 @Config.Sources({
-        "classpath:${env}.properties"}
-)
+        "classpath:${env}.properties"
+})
 public interface WebConfig extends Config {
 
     @DefaultValue("Chrome, 112.0")
