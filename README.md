@@ -50,7 +50,7 @@ ___
 gradle clean test -Denv=remote
 ```
 
-## <img alt="Allure" height="25" src="images/logo/Allure.svg" width="25"/></a>  <a name="Allure"></a>Allure</a>
+## <img alt="Allure" height="25" src="images/logo/Allure.svg" width="25"/></a>  <a name="Allure"></a>Allure Report	</a>
 
 
 ### *Основная страница отчёта*
@@ -66,9 +66,8 @@ gradle clean test -Denv=remote
 <img title="Allure Graphics" src="images/screen/AR3.png" width="850">  
 </p>
 
-___
 
-## <img alt="Allure" height="25" src="images/logo/Allure2.svg" width="25"/> </a>Интеграция с Allure TestOps</a>
+## <img alt="Allure_TO" height="25" src="images/logo/Allure_TO.svg" width="25"/> </a>Интеграция с Allure TestOps</a>
 
 
 ### *Allure TestOps Dashboard*
