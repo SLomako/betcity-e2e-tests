@@ -28,12 +28,11 @@
 - Заключение пари при недостаточном балансе для ставок Simple, System, Exspress
 - Cодержания заголовка главной страницы
 - Наличия ссылки на телеграмм бот
-____
 
 ## <img alt="Jenkins" height="25" src="images/logo/Jenkins.svg" width="25"/></a><a name="Сборка"></a>Сборка в [Jenkins]</a>
-____
+
 <p align="center">  
-<a href="https://jenkins.autotests.cloud/job/Kod3ik_qa_guru_x5/"><img src="images/screen/jenkins_dashboard.bmp" alt="Jenkins" width="950"/></a>  
+<img src="images/screen/jenkins.png" alt="Jenkins" width="950"/></a>  
 </p>
 
 
