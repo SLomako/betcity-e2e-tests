@@ -32,7 +32,7 @@
 ## <img alt="Jenkins" height="25" src="images/logo/Jenkins.svg" width="25"/></a><a name="Сборка"></a>Сборка в [Jenkins]</a>
 
 <p align="center">  
-<a href="https://jenkins.autotests.cloud/job/Kod3ik_qa_guru_x5/"><img src="images/screen/jenkins.jpg" alt="Jenkins" width="950"/></a>  
+<img src="images/screen/jenkins.png" alt="Jenkins" width="950"/></a>  
 </p>
 
 
