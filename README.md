@@ -50,7 +50,7 @@ ___
 gradle clean test -Denv=remote
 ```
 
-## <img alt="Allure" height="25" src="images/logo/Allure.svg" width="25"/></a> <a name="Allure"></a>Allure [отчет]</a>
+## <img alt="Allure" height="25" src="images/logo/Allure.svg" width="25"/></a> <a name="Allure"></a></a>
 
 
 ### *Основная страница отчёта*
