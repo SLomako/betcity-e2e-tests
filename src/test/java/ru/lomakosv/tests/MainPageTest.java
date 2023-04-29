@@ -27,7 +27,7 @@ public class MainPageTest extends TestBase {
 
     @Minor
     @Tags({@Tag("web"), @Tag("minor")})
-    @DisplayName("Проверка налчие ссылки на телеграмм бот")
+    @DisplayName("Проверка наличия ссылки на телеграмм бот")
     @Test
     void testLinkTelegramSupportBot() {
 
