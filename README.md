@@ -79,7 +79,7 @@ gradle clean test -Denv=remote
 ### *Авто и Ручные тест-кейсы*
 
 <p align="center">  
-<img title="Allure Tests" src="images/screenATO3.png" width="850">  
+<img title="Allure Tests" src="images/screen/ATO3.png" width="850">  
 </p>
 
 
