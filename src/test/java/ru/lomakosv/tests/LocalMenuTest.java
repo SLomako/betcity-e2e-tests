@@ -58,7 +58,5 @@ public class LocalMenuTest extends TestBase {
         step("Проверка изменения наименований меню согласно выбраному языку", () -> {
             $$("[class='menu'] a").filter(visible).shouldHave(CollectionCondition.texts(expectedButtons));
         });
-
-        Selenide.closeWebDriver();
     }
 }
