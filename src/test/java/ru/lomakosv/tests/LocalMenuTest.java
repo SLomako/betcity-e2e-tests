@@ -2,6 +2,7 @@ package ru.lomakosv.tests;
 
 import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.Selenide;
+import io.qameta.allure.Allure;
 import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -34,11 +35,13 @@ public class LocalMenuTest extends TestBase {
         );
     }
 
+
     @DisplayName("")
     @ParameterizedTest(name = "В первом результате выдачи для {0} должен отображаться текст {1}")
     @MethodSource
     @Tags({@Tag("web"), @Tag("critical")})
     void testMenuDependingOnTheLocal(Locale locale, List<String> expectedButtons) {
+        Allure.parameter("testParam", expectedButtons);
 
         step("Нажимаем на значек смену языка", () -> {
             $("[class='custom-select menu-lang']").click();
