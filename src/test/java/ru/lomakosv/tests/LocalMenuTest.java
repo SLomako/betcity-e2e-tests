@@ -1,6 +1,7 @@
 package ru.lomakosv.tests;
 
 import com.codeborne.selenide.CollectionCondition;
+import com.codeborne.selenide.Selenide;
 import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -50,6 +51,8 @@ public class LocalMenuTest extends TestBase {
         step("Проверка изменения наименований меню согласно выбраному языку", () -> {
             $$("[class='menu'] a").filter(visible).shouldHave(CollectionCondition.texts(expectedButtons));
         });
+
+        Selenide.closeWebDriver();
 
     }
 }
