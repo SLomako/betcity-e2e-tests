@@ -43,9 +43,9 @@
 - browserSize (размер окна браузера, по умолчанию 1920x1080)
 
 
-## ballot_box_with_check: Команда для запуска из терминала
+## Команда для запуска из терминала
 
-***Удаленный запуск с использованием Jenkins+Selinoid:***
+Удаленный запуск с использованием Jenkins+Selinoid:
 ```bash  
 gradle clean test -Denv=remote
 ```
