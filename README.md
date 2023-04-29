@@ -68,8 +68,9 @@ gradle clean test -Denv=remote
 
 ___
 
-## <img alt="Allure" height="25" src="images/logo/Allure2.svg" width="25"/></a>Интеграция с Allure TestOps</a>
-____
+## <img alt="Allure" height="25" src="images/logo/Allure2.svg" width="25"/> <a name="Интеграция с Allure TestOps"</a>
+
+
 ### *Allure TestOps Dashboard*
 
 <p align="center">  
