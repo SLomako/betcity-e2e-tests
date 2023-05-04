@@ -1,6 +1,8 @@
 plugins {
     id 'java'
     id 'io.qameta.allure' version '2.11.2'
+    id "io.freefair.lombok" version "8.0.1"
+
 }
 
 group 'ru.lomakosv'
@@ -50,50 +52,3 @@ test {
         }
     }
 }
-
-task blocker_test(type: Test) {
-    useJUnitPlatform {
-        includeTags("blocker1")
-    }
-    systemProperties(System.getProperties())
-
-    testLogging {
-
-        lifecycle {
-            events "started", "skipped", "failed", "standard_error", "standard_out"
-            exceptionFormat "short"
-        }
-    }
-}
-
-task critical_test(type: Test) {
-    useJUnitPlatform {
-        includeTags("critical")
-    }
-    systemProperties(System.getProperties())
-
-    testLogging {
-
-        lifecycle {
-            events "started", "skipped", "failed", "standard_error", "standard_out"
-            exceptionFormat "short"
-        }
-    }
-}
-
-task web_test(type: Test) {
-    useJUnitPlatform {
-        includeTags("web")
-    }
-    systemProperties(System.getProperties())
-
-    testLogging {
-
-        lifecycle {
-            events "started", "skipped", "failed", "standard_error", "standard_out"
-            exceptionFormat "short"
-        }
-    }
-}
-
-

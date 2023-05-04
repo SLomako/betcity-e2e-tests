@@ -1,7 +1,7 @@
 package ru.lomakosv.page;
 
 import com.codeborne.selenide.ElementsCollection;
-import ru.lomakosv.enums.Betting;
+import ru.lomakosv.data.Betting;
 import ru.lomakosv.page.components.CartFooterComponent;
 
 import static com.codeborne.selenide.Selenide.$$;
@@ -9,7 +9,7 @@ import static io.qameta.allure.Allure.step;
 
 public class BettingPage {
 
-    CartFooterComponent cartFooterComponent = new CartFooterComponent();
+    private final CartFooterComponent cartFooterComponent = new CartFooterComponent();
     private final ElementsCollection
             SELECT_COUNT_BETTING = $$("[class='line-event__main-bets'] :nth-child(1)");
 

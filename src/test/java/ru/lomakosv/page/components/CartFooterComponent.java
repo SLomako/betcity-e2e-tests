@@ -49,11 +49,9 @@ public class CartFooterComponent {
         return this;
     }
 
-
-    public CartFooterComponent confirmBet() {
+    public void confirmBet() {
         step("Нажимаем кнопку 'Заключить Пари'", () -> {
             CONFIRM_BUTTON.click();
         });
-        return this;
     }
 }

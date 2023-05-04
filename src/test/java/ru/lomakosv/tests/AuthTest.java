@@ -2,10 +2,12 @@ package ru.lomakosv.tests;
 
 import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.Tags;
+
 import org.junit.jupiter.api.Test;
 import ru.lomakosv.TestBase;
+import ru.lomakosv.config.AuthAccountNumberConfig;
+import ru.lomakosv.config.AuthAccountPhoneConfig;
+import ru.lomakosv.config.ConfigurationManager;
 import ru.lomakosv.page.components.AuthSignInComponent;
 import ru.lomakosv.page.components.UserInfoComponent;
 import ru.lomakosv.utils.Blocker;
@@ -17,36 +19,29 @@ import static io.qameta.allure.Allure.step;
 @DisplayName("Тест авторизации через главное меню сайта")
 public class AuthTest extends TestBase {
 
-    AuthSignInComponent authSignInComponent = new AuthSignInComponent();
-    UserInfoComponent userInfoComponent = new UserInfoComponent();
+    private final AuthSignInComponent authSignInComponent = new AuthSignInComponent();
+    private final UserInfoComponent userInfoComponent = new UserInfoComponent();
+    private final AuthAccountNumberConfig authAccountNumberConfig = ConfigurationManager.getAuthAccountNumberConfig();
+    private final AuthAccountPhoneConfig authAccountPhoneConfig = ConfigurationManager.getAuthAccountPhoneConfig();
 
-    @Tags({@Tag("web"), @Tag("blocker"), @Tag("auth")})
+
     @DisplayName("вход по номеру телефона")
     @Test
     void testAccountPhoneEntry() {
-
         step("Вводим номер телефона и пароль", () -> {
-            authSignInComponent.accountPhoneEntry();
+            authSignInComponent.logInWithPhoneNumber(authAccountPhoneConfig.accountPhone(), authAccountPhoneConfig.password());
         });
-        step("Проверяем что авторизация успешна", () -> {
-            userInfoComponent.verifyLogin();
-        });
-
+        step("Проверяем что авторизация успешна", userInfoComponent::checkLogin);
         userInfoComponent.logOut();
     }
 
-    @Tags({@Tag("web"), @Tag("blocker"), @Tag("auth")})
     @DisplayName("вход по номеру счет")
     @Test
     void testAccountNumberEntry() {
-
         step("Вводим номер счета и пароль", () -> {
-            authSignInComponent.accountNumberEntry();
+            authSignInComponent.logInByAccountNumber(authAccountNumberConfig.accountNumber(), authAccountNumberConfig.password());
         });
-        step("Проверяем что авторизация успешна", () -> {
-            userInfoComponent.verifyLogin();
-        });
-
+        step("Проверяем что авторизация успешна", userInfoComponent::checkLogin);
         userInfoComponent.logOut();
     }
 }

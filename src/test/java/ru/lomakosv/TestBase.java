@@ -9,6 +9,8 @@ import ru.lomakosv.config.ProjectConfiguration;
 import ru.lomakosv.helpers.Attach;
 
 import static com.codeborne.selenide.Configuration.baseUrl;
+import static com.codeborne.selenide.Selenide.switchTo;
+import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static io.qameta.allure.Allure.step;
 import static ru.lomakosv.config.ProjectConfiguration.webConfig;
 import static com.codeborne.selenide.Selenide.open;
@@ -24,19 +26,24 @@ public class TestBase {
     }
 
     @BeforeEach
-    void beforeEach() {
+    void openMainPage() {
         step("Открываем главную страницу", () -> {
             open(baseUrl);
         });
     }
 
+
     @AfterEach
-    void addAttachments() {
+    void addAttachmentsAndCloseMainPage() {
         if (webConfig.isRemote()) {
-            Attach.screenshotAs("Last screenshot");
-            Attach.pageSource();
-            Attach.browserConsoleLogs();
             Attach.addVideo();
         }
+
+        Attach.pageSource();
+        Attach.browserConsoleLogs();
+        Attach.screenshotAs("Last screenshot");
+        step("Закрываем главную страницу", () -> {
+            switchTo().window(getWebDriver().getWindowHandle()).close();
+        });
     }
 }

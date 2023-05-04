@@ -11,14 +11,13 @@ import static io.qameta.allure.Allure.step;
 
 public class UserInfoComponent {
 
-    public static AuthAccountNumberConfig authAccountNumberConfig  = ConfigurationManager.getAuthAccountNumberConfig();
+    private final AuthAccountNumberConfig authAccountNumberConfig  = ConfigurationManager.getAuthAccountNumberConfig();
 
     private final SelenideElement
             VERIFICATION_NAME_LOGIN = $("[class='user-info__item-step-value']"),
             LOG_OUT_BUTTON = $("[class*=icon_logout-light]");
 
-    public void verifyLogin()  {
-
+    public void checkLogin()  {
         step("Проверка номера счета", () -> {
             VERIFICATION_NAME_LOGIN.shouldHave(Condition.text(authAccountNumberConfig.accountNumber()));
         });
