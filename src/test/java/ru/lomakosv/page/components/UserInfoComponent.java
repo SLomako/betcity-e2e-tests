@@ -19,7 +19,7 @@ public class UserInfoComponent {
 
     public void checkLogin()  {
         step("Проверка номера счета", () -> {
-            VERIFICATION_NAME_LOGIN.shouldHave(Condition.text(authAccountNumberConfig.accountNumber()));
+            VERIFICATION_NAME_LOGIN.shouldHave(Condition.text(authAccountNumberConfig.accountNumber())); //todo убрать зависимость от переменной
         });
     }
 

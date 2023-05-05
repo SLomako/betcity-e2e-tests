@@ -42,7 +42,7 @@ public class TestBase {
         Attach.pageSource();
         Attach.browserConsoleLogs();
         Attach.screenshotAs("Last screenshot");
-        step("Закрываем главную страницу", () -> {
+        step("Закрываем вкладку браузера", () -> {
             switchTo().window(getWebDriver().getWindowHandle()).close();
         });
     }

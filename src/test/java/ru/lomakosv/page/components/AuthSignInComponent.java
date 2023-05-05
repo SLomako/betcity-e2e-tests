@@ -22,7 +22,7 @@ public class AuthSignInComponent {
         step("Нажимаем кнопку вход на главном меню", () -> {
             SIGN_IN_BUTTON.click();
         });
-        step("Выбираем вход по телефону", () -> {
+        step("Выбираем вкладку телефон", () -> {
             AUTH_BUTTON.get(0).click();
         });
         step("Вводим номер телефона", () -> {
@@ -40,10 +40,10 @@ public class AuthSignInComponent {
         step("Нажимаем кнопку вход на главном меню", () -> {
             SIGN_IN_BUTTON.click();
         });
-        step("Выбираем вход по номеру аккаунта", () -> {
+        step("Выбираем вкладу счет", () -> {
             AUTH_BUTTON.get(2).click();
         });
-        step("Вводим номер аккаунта", () -> {
+        step("Вводим номер счета", () -> {
             LOGIN_INPUT.setValue(accountNumber);
         });
         step("Вводим пароль", () -> {

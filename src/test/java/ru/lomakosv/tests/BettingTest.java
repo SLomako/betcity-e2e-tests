@@ -34,12 +34,12 @@ public class BettingTest extends TestBase {
     @EnumSource(Betting.class)
     @ParameterizedTest(name = "для {0}")
     void testBetting(Betting bettingOption) {
-        step("Входим по номеру телефона", () -> {
+        step("Авторизация на сайте", () -> {
             authSignInComponent.logInWithPhoneNumber(authAccountPhoneConfig.accountPhone(), authAccountPhoneConfig.password());
         });
-        step("Открываем Топ матчи в разделе популярное", popularsHeaderComponent::openPopularsChamps);
+        step("Открываем раздел Популярное", popularsHeaderComponent::openPopularsChamps);
 
-        step("Выбираем систему ставок {0}", () -> {
+        step(String.format("Выбираем систему ставок %s", bettingOption), () -> {
             bettingPage.selectBettingOption(bettingOption.name());
         });
         step("Вводим сумму ставки", () -> {

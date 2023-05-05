@@ -25,23 +25,23 @@ public class AuthTest extends TestBase {
     private final AuthAccountPhoneConfig authAccountPhoneConfig = ConfigurationManager.getAuthAccountPhoneConfig();
 
 
-    @DisplayName("вход по номеру телефона")
+    @DisplayName("Авторизация по номеру телефона")
     @Test
     void testAccountPhoneEntry() {
         step("Вводим номер телефона и пароль", () -> {
             authSignInComponent.logInWithPhoneNumber(authAccountPhoneConfig.accountPhone(), authAccountPhoneConfig.password());
         });
-        step("Проверяем что авторизация успешна", userInfoComponent::checkLogin);
+        step("Проверяем что авторизация прошла успешна", userInfoComponent::checkLogin);
         userInfoComponent.logOut();
     }
 
-    @DisplayName("вход по номеру счет")
+    @DisplayName("Авторизация по номеру счета")
     @Test
     void testAccountNumberEntry() {
         step("Вводим номер счета и пароль", () -> {
             authSignInComponent.logInByAccountNumber(authAccountNumberConfig.accountNumber(), authAccountNumberConfig.password());
         });
-        step("Проверяем что авторизация успешна", userInfoComponent::checkLogin);
+        step("Проверяем что авторизация прошла успешна", userInfoComponent::checkLogin);
         userInfoComponent.logOut();
     }
 }

@@ -42,8 +42,8 @@ public class CartFooterComponent {
         });
     }
 
-    public CartFooterComponent depositTheAmount(String amount) {
-        step("Вносим сумму ставки", () -> {
+    public CartFooterComponent depositTheAmount(String amount) { //todo сделать глаголом
+        step(String.format("сумма ставки %s", amount), () -> {
             AMOUNT_INPUT.setValue(amount);
         });
         return this;
