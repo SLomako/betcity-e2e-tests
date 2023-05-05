@@ -19,7 +19,7 @@ import static io.qameta.allure.Allure.step;
 
 @Owner("SLomako")
 @Critical
-@DisplayName("Тест на заключение пари при недостаточном балансе на счету")
+@DisplayName("Тесты на заключение пари при недостаточном балансе на счету")
 
 public class BettingTest extends TestBase {
 

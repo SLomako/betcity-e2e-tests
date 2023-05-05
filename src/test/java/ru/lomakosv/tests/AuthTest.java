@@ -16,7 +16,7 @@ import static io.qameta.allure.Allure.step;
 
 @Owner("SLomako")
 @Blocker
-@DisplayName("Тест авторизации через главное меню сайта")
+@DisplayName("Тесты авторизации через главное меню сайта")
 public class AuthTest extends TestBase {
 
     private final AuthSignInComponent authSignInComponent = new AuthSignInComponent();
