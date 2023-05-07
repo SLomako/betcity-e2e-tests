@@ -8,8 +8,8 @@ import org.aeonbits.owner.Config;
 public interface AuthAccountPhoneConfig extends Config {
 
     @Key("accountPhone")
-    String accountPhone();
+    String getAccountPhone();
 
     @Key("password")
-    String password();
+    String getPassword();
 }

@@ -8,9 +8,9 @@ import org.aeonbits.owner.Config;
 public interface AuthSelenoidConfig extends Config {
 
     @Key("username.selenoid")
-    String remote_username();
+    String getRemoteUsername();
 
     @Key("password.selenoid")
-    String remote_password();
+    String getRemotePassword();
 }
 

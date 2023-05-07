@@ -35,8 +35,8 @@ public class BettingTest extends TestBase {
     @ParameterizedTest(name = "для {0}")
     void testBetting(Betting bettingOption) {
         step("Авторизация на сайте", () ->
-                authSignInComponent.logInWithPhoneNumber(authAccountPhoneConfig.accountPhone(),
-                        authAccountPhoneConfig.password()));
+                authSignInComponent.logInWithPhoneNumber(authAccountPhoneConfig.getAccountPhone(),
+                        authAccountPhoneConfig.getPassword()));
 
         step("Открываем раздел Популярное", popularsHeaderComponent::openTopMatchesSection);
 

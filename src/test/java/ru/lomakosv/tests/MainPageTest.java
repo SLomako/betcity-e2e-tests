@@ -27,7 +27,6 @@ public class MainPageTest extends TestBase {
     @ParameterizedTest(name = "Проверка отображения текста в выдаче для {0}")
     void testMenuDependingOnTheLocal(MenuItems menuItems) {
 
-
         Locale locale = menuItems.getLocale();
         List<String> expectedMenuNames = menuItems.getMenuNames();
 
@@ -53,7 +52,6 @@ public class MainPageTest extends TestBase {
     void testLinkTelegramSupportBot() {
         step("Проверяем наличие ссылки на Telegram-бота https://t.me/betcityru_support_bot", () ->
             Assertions.assertEquals(mainPage.getTelegramBotLinkPresence(), "https://t.me/betcityru_support_bot"));
-
     }
 
     @Minor

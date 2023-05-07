@@ -28,11 +28,12 @@ public class AuthTest extends TestBase {
     @Test
     void testAccountPhoneEntry() {
         step("Вводим номер телефона и пароль", () ->
-                authSignInComponent.logInWithPhoneNumber(authAccountPhoneConfig.accountPhone(),
-                        authAccountPhoneConfig.password()));
+                authSignInComponent.logInWithPhoneNumber(authAccountPhoneConfig.getAccountPhone(),
+                        authAccountPhoneConfig.getPassword()));
 
         step("Проверяем успешную авторизацию в системе", () ->
-                userInfoComponent.getNumberLogin(authAccountNumberConfig.accountNumber()));
+                userInfoComponent.getNumberLogin(authAccountNumberConfig.getAccountNumber()));
+
         userInfoComponent.logOut();
     }
 
@@ -40,11 +41,12 @@ public class AuthTest extends TestBase {
     @Test
     void testAccountNumberEntry() {
         step("Вводим номер счета и пароль", () ->
-                authSignInComponent.logInByAccountNumber(authAccountNumberConfig.accountNumber(),
-                        authAccountNumberConfig.password()));
+                authSignInComponent.logInByAccountNumber(authAccountNumberConfig.getAccountNumber(),
+                        authAccountNumberConfig.getPassword()));
 
         step("Проверяем успешную авторизацию в системе", () ->
-                userInfoComponent.getNumberLogin(authAccountNumberConfig.accountNumber()));
+                userInfoComponent.getNumberLogin(authAccountNumberConfig.getAccountNumber()));
+
         userInfoComponent.logOut();
     }
 }

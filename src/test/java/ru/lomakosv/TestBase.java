@@ -1,5 +1,6 @@
 package ru.lomakosv;
 
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
@@ -21,6 +22,7 @@ public class TestBase {
 
     @BeforeAll
     static void setupTestEnvironment() {
+        Configuration.pageLoadTimeout = 60000;
         projectConfiguration.config();
         SelenideLogger.addListener("allure", new AllureSelenide());
     }
