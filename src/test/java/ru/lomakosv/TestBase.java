@@ -20,16 +20,15 @@ public class TestBase {
     static ProjectConfiguration projectConfiguration = new ProjectConfiguration();
 
     @BeforeAll
-    static void BeforeALl() {
+    static void setupTestEnvironment() {
         projectConfiguration.config();
         SelenideLogger.addListener("allure", new AllureSelenide());
     }
 
     @BeforeEach
     void openMainPage() {
-        step("Открываем главную страницу", () -> {
-            open(baseUrl);
-        });
+        step("Открываем главную страницу", () ->
+            open(baseUrl));
     }
 
 
@@ -42,8 +41,7 @@ public class TestBase {
         Attach.pageSource();
         Attach.browserConsoleLogs();
         Attach.screenshotAs("Last screenshot");
-        step("Закрываем вкладку браузера", () -> {
-            switchTo().window(getWebDriver().getWindowHandle()).close();
-        });
+        step("Закрываем вкладку браузера", () ->
+            switchTo().window(getWebDriver().getWindowHandle()).close());
     }
 }

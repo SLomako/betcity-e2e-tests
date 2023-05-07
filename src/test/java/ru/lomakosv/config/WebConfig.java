@@ -16,13 +16,13 @@ public interface WebConfig extends Config {
     String browserSize();
 
     @DefaultValue("https://betcity.ru")
-    @Key("baseUrl")
+    @Key("baseURL")
     String baseUrl();
 
     @DefaultValue("false")
     @Key("isRemote")
     boolean isRemote();
 
-    @Key("remoteUrl")
+    @Key("remoteURL")
     String remoteUrl();
 }

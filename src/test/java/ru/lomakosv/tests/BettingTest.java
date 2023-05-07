@@ -34,22 +34,23 @@ public class BettingTest extends TestBase {
     @EnumSource(Betting.class)
     @ParameterizedTest(name = "для {0}")
     void testBetting(Betting bettingOption) {
-        step("Авторизация на сайте", () -> {
-            authSignInComponent.logInWithPhoneNumber(authAccountPhoneConfig.accountPhone(), authAccountPhoneConfig.password());
-        });
-        step("Открываем раздел Популярное", popularsHeaderComponent::openPopularsChamps);
+        step("Авторизация на сайте", () ->
+                authSignInComponent.logInWithPhoneNumber(authAccountPhoneConfig.accountPhone(),
+                        authAccountPhoneConfig.password()));
 
-        step(String.format("Выбираем систему ставок %s", bettingOption), () -> {
-            bettingPage.selectBettingOption(bettingOption.name());
-        });
-        step("Вводим сумму ставки", () -> {
-            cartFooterComponent
-                    .depositTheAmount("1000")
-                    .confirmBet();
-        });
-        step("Проверка сообщения о результате заключения пари", () -> {
-            cartFooterComponent.verifyMessage("Пари не оформлено. Недостаточно средств на счете");
-        });
+        step("Открываем раздел Популярное", popularsHeaderComponent::openTopMatchesSection);
+
+        step(String.format("Выбираем систему ставок %s", bettingOption), () ->
+                bettingPage.selectBettingOption(bettingOption.name()));
+
+        step("Вводим сумму ставки и нажимает заключать пари", () ->
+                cartFooterComponent
+                        .setBetAmount("1000")
+                        .clickPlaceBetButton());
+
+        step("Проверка сообщения о результате заключения пари", () ->
+                cartFooterComponent.getMessage("Пари не оформлено. Недостаточно средств на счете"));
+
         step("Выход из аккаунта", userInfoComponent::logOut);
     }
 }
