@@ -3,8 +3,6 @@ package ru.lomakosv.config;
 import com.codeborne.selenide.Configuration;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-import java.util.Map;
-
 public class ProjectConfiguration {
 
     public static WebConfig webConfig = ConfigurationManager.getWebConfig();
@@ -17,19 +15,17 @@ public class ProjectConfiguration {
         Configuration.browserVersion = browserWithVersion[1];
         Configuration.browserSize = webConfig.browserSize();
 
-        if (webConfig.isRemote()) {
+        String remoteUrl = webConfig.remoteUrl();
+        if (remoteUrl != null)
             selenoidVideo();
-        }
     }
 
     public void selenoidVideo() {
         String remoteUrl = webConfig.remoteUrl();
         Configuration.remote = "https://" + authSelenoidConfig.remote_username() + ":" + authSelenoidConfig.remote_password() + "@" + remoteUrl  + "/wd/hub";
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("selenoid:options", Map.<String, Object>of(
-                "enableVNC", true,
-                "enableVideo", true
-        ));
+        capabilities.setCapability("enableVNC", true);
+        capabilities.setCapability("enableVideo", true);
         Configuration.browserCapabilities = capabilities;
     }
 }
