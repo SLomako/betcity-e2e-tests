@@ -1,6 +1,5 @@
 package ru.lomakosv;
 
-import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
@@ -8,13 +7,14 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import ru.lomakosv.config.ProjectConfiguration;
 import ru.lomakosv.helpers.Attach;
+import ru.lomakosv.page.MainPage;
+
 
 import static com.codeborne.selenide.Configuration.baseUrl;
-import static com.codeborne.selenide.Selenide.switchTo;
+import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static io.qameta.allure.Allure.step;
 import static ru.lomakosv.config.ProjectConfiguration.webConfig;
-import static com.codeborne.selenide.Selenide.open;
 
 public class TestBase {
 
@@ -22,7 +22,6 @@ public class TestBase {
 
     @BeforeAll
     static void setupTestEnvironment() {
-        Configuration.pageLoadTimeout = 60000;
         projectConfiguration.config();
         SelenideLogger.addListener("allure", new AllureSelenide());
     }
@@ -30,9 +29,13 @@ public class TestBase {
     @BeforeEach
     void openMainPage() {
         step("Открываем главную страницу", () ->
-            open(baseUrl));
-    }
+                open(baseUrl));
 
+        step("Закрытие всплывающего окна с текстом 'Уведомления от БЕТСИТИ", () -> {
+            MainPage mainPage = new MainPage();
+            mainPage.closePopup("Уведомления от БЕТСИТИ");
+        });
+    }
 
     @AfterEach
     void addAttachmentsAndCloseMainPage() {
@@ -44,6 +47,6 @@ public class TestBase {
         Attach.browserConsoleLogs();
         Attach.screenshotAs("Last screenshot");
         step("Закрываем вкладку браузера", () ->
-            switchTo().window(getWebDriver().getWindowHandle()).close());
+                switchTo().window(getWebDriver().getWindowHandle()).close());
     }
 }
