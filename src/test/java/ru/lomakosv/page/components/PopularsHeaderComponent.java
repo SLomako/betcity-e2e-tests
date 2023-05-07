@@ -12,7 +12,6 @@ public class PopularsHeaderComponent {
 
     public void openTopMatchesSection() {
         step("открываем раздел Топ-матчи", () ->
-            SELECT_TOP_MATCH.shouldBe(visible).click());
-
+                SELECT_TOP_MATCH.shouldBe(visible).click());
     }
 }

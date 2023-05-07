@@ -23,5 +23,4 @@ public class UserInfoComponent {
         step("Выходим из аккаунта", () ->
                 LOG_OUT_BUTTON.shouldBe(enabled).shouldBe(visible).click());
     }
-
 }

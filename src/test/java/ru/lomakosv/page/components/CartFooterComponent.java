@@ -43,6 +43,7 @@ public class CartFooterComponent {
     public CartFooterComponent setBetAmount(String amount) {
         step(String.format("сумма ставки %s", amount), () ->
                 AMOUNT_INPUT.setValue(amount));
+
         return this;
     }
 

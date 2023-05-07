@@ -13,7 +13,6 @@ public class BettingPage {
     private final ElementsCollection
             SELECT_COUNT_BETTING = $$("[class='line-event__main-bets'] :nth-child(1)");
 
-
     public void selectBettingOption(String bettingOption) {
 
         if (Betting.SIMPLE.name().equals(bettingOption)) {
