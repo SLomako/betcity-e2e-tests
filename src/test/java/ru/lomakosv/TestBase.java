@@ -14,7 +14,6 @@ import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static io.qameta.allure.Allure.step;
-import static ru.lomakosv.config.ProjectConfiguration.webConfig;
 
 public class TestBase {
 
@@ -39,14 +38,12 @@ public class TestBase {
 
     @AfterEach
     void addAttachmentsAndCloseMainPage() {
-        if (webConfig.isRemote()) {
-            Attach.addVideo();
-        }
-
+        Attach.addVideo();
         Attach.pageSource();
         Attach.browserConsoleLogs();
         Attach.screenshotAs("Last screenshot");
         step("Закрываем вкладку браузера", () ->
                 switchTo().window(getWebDriver().getWindowHandle()).close());
+
     }
 }
