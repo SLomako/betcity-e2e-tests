@@ -10,7 +10,7 @@ import ru.lomakosv.config.AuthAccountPhoneConfig;
 import ru.lomakosv.config.ConfigurationManager;
 import ru.lomakosv.page.components.AuthSignInComponent;
 import ru.lomakosv.page.components.UserInfoComponent;
-import ru.lomakosv.utils.Blocker;
+import ru.lomakosv.helpers.annotanion.Blocker;
 
 import static io.qameta.allure.Allure.step;
 
@@ -24,8 +24,8 @@ public class AuthTest extends TestBase {
     private final AuthAccountNumberConfig authAccountNumberConfig = ConfigurationManager.getAuthAccountNumberConfig();
     private final AuthAccountPhoneConfig authAccountPhoneConfig = ConfigurationManager.getAuthAccountPhoneConfig();
 
-    @DisplayName("Тест на авторизацию по номеру телефона")
     @Test
+    @DisplayName("Тест на авторизацию по номеру телефона")
     void testAccountPhoneEntry() {
         step("Вводим номер телефона и пароль", () ->
                 authSignInComponent.logInWithPhoneNumber(authAccountPhoneConfig.getAccountPhone(),
@@ -37,8 +37,8 @@ public class AuthTest extends TestBase {
         userInfoComponent.logOut();
     }
 
-    @DisplayName("Тест на авторизация по номеру счета")
     @Test
+    @DisplayName("Тест на авторизация по номеру счета")
     void testAccountNumberEntry() {
         step("Вводим номер счета и пароль", () ->
                 authSignInComponent.logInByAccountNumber(authAccountNumberConfig.getAccountNumber(),

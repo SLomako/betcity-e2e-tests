@@ -9,6 +9,7 @@ public class ProjectConfiguration {
     public static AuthSelenoidConfig authSelenoidConfig = ConfigurationManager.getAuthSelenoidConfig();
 
     public void config() {
+        Configuration.pageLoadStrategy = "eager";
         Configuration.baseUrl = webConfig.baseUrl();
         String[] browserWithVersion = webConfig.getBrowserAndVersion();
         Configuration.browser = browserWithVersion[0];

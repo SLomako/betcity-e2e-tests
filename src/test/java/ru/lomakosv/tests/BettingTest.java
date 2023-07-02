@@ -13,7 +13,7 @@ import ru.lomakosv.page.components.AuthSignInComponent;
 import ru.lomakosv.page.components.CartFooterComponent;
 import ru.lomakosv.page.components.PopularsHeaderComponent;
 import ru.lomakosv.page.components.UserInfoComponent;
-import ru.lomakosv.utils.Critical;
+import ru.lomakosv.helpers.annotanion.Critical;
 
 import static io.qameta.allure.Allure.step;
 
@@ -30,9 +30,9 @@ public class BettingTest extends TestBase {
     private final UserInfoComponent userInfoComponent = new UserInfoComponent();
     private final BettingPage bettingPage = new BettingPage();
 
-    @DisplayName("Тест на заключение пари при недостаточном балансе на счету")
     @EnumSource(Betting.class)
     @ParameterizedTest(name = "для {0}")
+    @DisplayName("Тест на заключение пари при недостаточном балансе на счету")
     void testBetting(Betting bettingOption) {
         step("Авторизация на сайте", () ->
                 authSignInComponent.logInWithPhoneNumber(authAccountPhoneConfig.getAccountPhone(),

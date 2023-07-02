@@ -1,4 +1,4 @@
-package ru.lomakosv.utils;
+package ru.lomakosv.helpers.annotanion;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
