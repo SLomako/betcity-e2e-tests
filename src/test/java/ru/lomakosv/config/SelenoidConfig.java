@@ -14,7 +14,5 @@ public interface SelenoidConfig extends Config {
     @Key("password.selenoid")
     String password();
 
-    @Key("remoteURL")
-    String url();
 }
 

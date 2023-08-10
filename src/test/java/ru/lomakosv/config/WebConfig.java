@@ -19,4 +19,7 @@ public interface WebConfig extends Config {
     @DefaultValue("https://betcity.ru")
     @Key("baseURL")
     String baseUrl();
+
+    @Key("remoteURL")
+    String url();
 }

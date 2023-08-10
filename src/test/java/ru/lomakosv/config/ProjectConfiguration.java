@@ -16,13 +16,13 @@ public class ProjectConfiguration {
         Configuration.browserVersion = browserWithVersion[1];
         Configuration.browserSize = webConfig.browserSize();
 
-        String remoteUrl = authSelenoidConfig.url();
+        String remoteUrl = webConfig.url();
         if (remoteUrl != null)
             selenoidVideo();
     }
 
     public void selenoidVideo() {
-        String remoteUrl = authSelenoidConfig.url();
+        String remoteUrl = webConfig.url();
         Configuration.remote = "https://" + authSelenoidConfig.userName() + ":" + authSelenoidConfig.password() + "@" + remoteUrl  + "/wd/hub";
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
