@@ -36,7 +36,8 @@
 </p>
 
 
-## :ballot_box_with_check: Параметры сборки в Jenkins:
+## :ballot_box_with_check: Параметры сборки в [![Jenkins](https://jenkins.autotests.cloud/job/Students/job/18-lom14-betcity/)](https://jenkins.autotests.cloud/job/Students/job/18-lom14-betcity/)
+:
 
 - browser (браузер, по умолчанию chrome)
 - browserVersion (версия браузера, по умолчанию 100.0)
