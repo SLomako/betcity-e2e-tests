@@ -6,6 +6,7 @@ import org.aeonbits.owner.ConfigCache;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import ru.lomakosv.config.SelenoidConfig;
+import ru.lomakosv.config.WebConfig;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -17,7 +18,7 @@ import static org.openqa.selenium.logging.LogType.BROWSER;
 
 public class Attach {
 
-    static SelenoidConfig authSelenoidConfig = ConfigCache.getOrCreate(SelenoidConfig.class);
+    static WebConfig webConfig = ConfigCache.getOrCreate(WebConfig.class);
 
     @Attachment(value = "{attachName}", type = "image/png")
     public static byte[] screenshotAs(String attachName) {
@@ -51,7 +52,7 @@ public class Attach {
     }
 
     public static URL getVideoUrl() {
-        String videoUrl = "https" + authSelenoidConfig.url() + "/video/" + sessionId() + ".mp4";
+        String videoUrl = "https" + webConfig.url() + "/video/" + sessionId() + ".mp4";
         try {
 
             return new URL(videoUrl);
