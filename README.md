@@ -29,15 +29,15 @@
 - Cодержания заголовка главной страницы
 - Наличия ссылки на телеграмм бот
 
-## <img alt="Jenkins" height="25" src="images/logo/Jenkins.svg" width="25"/></a><a name="Сборка"></a>Сборка в [Jenkins]</a>
+## <img alt="Jenkins" height="25" src="images/logo/Jenkins.svg" width="25"/> Сборка в [Jenkins](https://jenkins.autotests.cloud/job/Students/job/18-lom14-betcity/)
+
 
 <p align="center">  
 <img src="images/screen/jenkins.png" alt="Jenkins" width="950"/></a>  
 </p>
 
 
-## :ballot_box_with_check: Параметры сборки в [![Jenkins](https://jenkins.autotests.cloud/job/Students/job/18-lom14-betcity/)](https://jenkins.autotests.cloud/job/Students/job/18-lom14-betcity/)
-:
+## :ballot_box_with_check: Параметры сборки в Jenkins:
 
 - browser (браузер, по умолчанию chrome)
 - browserVersion (версия браузера, по умолчанию 100.0)
