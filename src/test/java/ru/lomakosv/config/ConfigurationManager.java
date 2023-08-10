@@ -17,7 +17,7 @@ public class ConfigurationManager {
         return ConfigCache.getOrCreate(AuthAccountPhoneConfig.class);
     }
 
-    public static AuthSelenoidConfig getAuthSelenoidConfig() {
-        return ConfigCache.getOrCreate(AuthSelenoidConfig.class);
+    public static SelenoidConfig getAuthSelenoidConfig() {
+        return ConfigCache.getOrCreate(SelenoidConfig.class);
     }
 }

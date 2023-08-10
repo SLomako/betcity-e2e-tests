@@ -35,8 +35,8 @@ public class BettingTest extends TestBase {
     @DisplayName("Тест на заключение пари при недостаточном балансе на счету")
     void testBetting(Betting bettingOption) {
         step("Авторизация на сайте", () ->
-                authSignInComponent.logInWithPhoneNumber(authAccountPhoneConfig.getAccountPhone(),
-                        authAccountPhoneConfig.getPassword()));
+                authSignInComponent.logInWithPhoneNumber(authAccountPhoneConfig.phone(),
+                        authAccountPhoneConfig.password()));
 
         step("Открываем раздел Популярное", popularsHeaderComponent::openTopMatchesSection);
 

@@ -2,8 +2,10 @@ package ru.lomakosv.helpers;
 
 import com.codeborne.selenide.Selenide;
 import io.qameta.allure.Attachment;
+import org.aeonbits.owner.ConfigCache;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import ru.lomakosv.config.SelenoidConfig;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -14,6 +16,9 @@ import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static org.openqa.selenium.logging.LogType.BROWSER;
 
 public class Attach {
+
+    static SelenoidConfig authSelenoidConfig = ConfigCache.getOrCreate(SelenoidConfig.class);
+
     @Attachment(value = "{attachName}", type = "image/png")
     public static byte[] screenshotAs(String attachName) {
 
@@ -46,7 +51,7 @@ public class Attach {
     }
 
     public static URL getVideoUrl() {
-        String videoUrl = "https://selenoid.autotests.cloud/video/" + sessionId() + ".mp4";
+        String videoUrl = "https" + authSelenoidConfig.url() + "/video/" + sessionId() + ".mp4";
         try {
 
             return new URL(videoUrl);

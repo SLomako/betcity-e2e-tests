@@ -20,7 +20,7 @@ import static io.qameta.allure.Allure.step;
 @DisplayName("Тесты главной страницы")
 public class MainPageTest extends TestBase {
 
-    MainPage mainPage = new MainPage();
+    private final MainPage mainPage = new MainPage();
 
     @EnumSource(value = MenuItems.class)
     @ParameterizedTest(name = "Проверка отображения текста в выдаче для {0}")

@@ -22,11 +22,12 @@ public class TestBase {
     @BeforeAll
     static void setupTestEnvironment() {
         projectConfiguration.config();
-        SelenideLogger.addListener("allure", new AllureSelenide());
     }
 
     @BeforeEach
     void openMainPage() {
+        SelenideLogger.addListener("allure", new AllureSelenide());
+
         step("Открываем главную страницу", () ->
                 open(baseUrl));
 

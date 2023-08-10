@@ -5,12 +5,15 @@ import org.aeonbits.owner.Config;
 @Config.Sources({
         "classpath:auth.properties"
 })
-public interface AuthSelenoidConfig extends Config {
+public interface SelenoidConfig extends Config {
 
     @Key("username.selenoid")
-    String getRemoteUsername();
+    String userName();
 
     @Key("password.selenoid")
-    String getRemotePassword();
+    String password();
+
+    @Key("remoteURL")
+    String url();
 }
 

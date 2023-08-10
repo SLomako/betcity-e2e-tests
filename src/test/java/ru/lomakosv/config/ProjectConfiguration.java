@@ -5,25 +5,25 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class ProjectConfiguration {
 
-    public static WebConfig webConfig = ConfigurationManager.getWebConfig();
-    public static AuthSelenoidConfig authSelenoidConfig = ConfigurationManager.getAuthSelenoidConfig();
+    protected static WebConfig webConfig = ConfigurationManager.getWebConfig();
+    protected static SelenoidConfig authSelenoidConfig = ConfigurationManager.getAuthSelenoidConfig();
 
     public void config() {
         Configuration.pageLoadStrategy = "eager";
         Configuration.baseUrl = webConfig.baseUrl();
-        String[] browserWithVersion = webConfig.getBrowserAndVersion();
+        String[] browserWithVersion = webConfig.browserAndVersion();
         Configuration.browser = browserWithVersion[0];
         Configuration.browserVersion = browserWithVersion[1];
         Configuration.browserSize = webConfig.browserSize();
 
-        String remoteUrl = webConfig.remoteUrl();
+        String remoteUrl = authSelenoidConfig.url();
         if (remoteUrl != null)
             selenoidVideo();
     }
 
     public void selenoidVideo() {
-        String remoteUrl = webConfig.remoteUrl();
-        Configuration.remote = "https://" + authSelenoidConfig.getRemoteUsername() + ":" + authSelenoidConfig.getRemotePassword() + "@" + remoteUrl  + "/wd/hub";
+        String remoteUrl = authSelenoidConfig.url();
+        Configuration.remote = "https://" + authSelenoidConfig.userName() + ":" + authSelenoidConfig.password() + "@" + remoteUrl  + "/wd/hub";
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);

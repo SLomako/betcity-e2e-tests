@@ -8,8 +8,8 @@ import org.aeonbits.owner.Config;
 public interface AuthAccountNumberConfig extends Config {
 
     @Key("accountNumber")
-    String getAccountNumber();
+    String number();
 
     @Key("password")
-    String getPassword();
+    String password();
 }
